@@ -9,14 +9,6 @@ body {
     color: #333;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('assets/bg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
-}
 
 header {
     background: rgba(0, 0, 0, 0.8);
@@ -128,4 +120,25 @@ footer {
     main {
         width: 95%;
     }
+}
+
+/* Keep the body background as is, or slightly dim it */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("assets/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #333; /* If your container is light, use darker text */
+}
+
+/* Wrap your main content in a container with a background overlay */
+main {
+  background: rgba(255, 255, 255, 0.8);
+  margin: 20px auto;
+  padding: 40px;
+  width: 80%;
+  max-width: 1200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
