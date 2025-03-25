@@ -1,144 +1,73 @@
 /* Base Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    /* Using a full-page background image; adjust file name as needed */
-    background: url('assets/bg-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('assets/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff; /* White text for better contrast against the background */
 }
 
-
 header {
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2em;
+  margin: 0;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px 15px;
-    border-radius: 4px;
-    transition: background 0.3s, transform 0.3s;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    background: #0073e6;
-    transform: scale(1.05);
+  background: #0073e6;
+  transform: scale(1.05);
 }
 
-/* Main Content Styling */
+/* Main Container with Semi-Transparent Overlay */
 main {
-    padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.9); /* a subtle white overlay for readability */
-    margin: 20px auto;
-    width: 90%;
-    max-width: 1200px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-}
-
-.hero, .intro, .experience, .about, .contact-info {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.hero h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.2em;
-}
-
-/* Button Styling */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.btn:hover {
-    background: #218838;
-    transform: translateY(-3px);
-}
-
-/* Footer Styling */
-footer {
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    position: relative;
-    z-index: 10;
-}
-
-/* Additional Interactive Effects */
-.project-card, .project-item, .project-details {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card:hover,
-.project-item:hover,
-.project-details:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-    
-    main {
-        width: 95%;
-    }
-}
-
-/* Keep the body background as is, or slightly dim it */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: url("assets/bg.jpg") no-repeat center center fixed;
-  background-size: cover;
-  color: #333; /* If your container is light, use darker text */
-}
-
-/* Wrap your main content in a container with a background overlay */
-main {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.4);
   margin: 20px auto;
   padding: 40px;
   width: 80%;
   max-width: 1200px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Example section headings and paragraphs */
+main h2 {
+  margin-top: 0;
+  font-size: 2em;
+}
+
+main p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 15px;
 }
