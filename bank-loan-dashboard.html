@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bank Loan Dashboard Project | Rishi Pandey</title>
-  <link rel="stylesheet" href="Styling.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 1 - Bank Loan Dashboard</title>
+  <link rel="stylesheet" href="Styling.css" />
 </head>
 <body>
   <header>
-    <h1>Bank Loan Dashboard Project</h1>
+    <h1>Project 1: Bank Loan Dashboard</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -19,86 +19,62 @@
   </header>
 
   <main>
-    <!-- Project Overview -->
-    <section class="project-overview">
-      <h2>Project Overview</h2>
+    <!-- Project Introduction -->
+    <section>
+      <h2>Overview</h2>
+      <img src="assets/bank-loan-small.jpg" alt="Bank Loan Project" style="max-width:300px; float:right; margin:0 0 20px 20px;" />
       <p>
-        The Bank Loan Dashboard project is an interactive Power BI solution designed to provide comprehensive insights into bank loan data. 
-        It leverages advanced data analytics techniques to assess loan performance, risk factors, and overall financial trends, enabling financial institutions to make data-driven decisions.
+        This project focuses on analyzing bank loan data to uncover trends, identify high-risk borrowers, and
+        streamline the loan approval process. By leveraging <strong>Power BI</strong> for interactive data visualization
+        and <strong>SQL</strong> for data preparation, we can deliver actionable insights that drive informed decisions
+        for financial institutions.
       </p>
     </section>
 
-    <!-- Problem Statement -->
-    <section class="problem-statement">
-      <h2>Problem Statement</h2>
-      <p>
-        Banks and financial institutions require a real-time, data-driven approach to understand the dynamics of loan applications and approvals. 
-        Traditional reporting methods often fail to provide actionable insights into risk factors, customer segmentation, and performance metrics, 
-        leading to sub-optimal decision-making.
-      </p>
-    </section>
-
-    <!-- Objectives -->
-    <section class="objectives">
-      <h2>Objectives</h2>
+    <!-- Structured Write-up (Based on your Documents) -->
+    <section>
+      <h2>Project Details</h2>
+      <h3>Objectives</h3>
       <ul>
-        <li>Visualize key performance indicators (KPIs) such as total loan applications, funded amounts, and default rates.</li>
-        <li>Identify high-risk borrower segments and trends over time.</li>
-        <li>Enhance decision-making through interactive, drill-down reports.</li>
+        <li>Track total loan applications, funded amounts, and month-over-month performance.</li>
+        <li>Identify and categorize borrowers by risk levels and demographics.</li>
+        <li>Provide an interactive dashboard to monitor loan performance in real-time.</li>
+      </ul>
+
+      <h3>Methodology</h3>
+      <ul>
+        <li><strong>Data Collection:</strong> The <em>financial_loan.csv</em> dataset was used to gather loan information.</li>
+        <li><strong>Data Cleaning & Transformation:</strong> SQL scripts (<em>Queries.sql</em>) were executed to filter
+            and preprocess data, ensuring accuracy and consistency.</li>
+        <li><strong>Domain Knowledge:</strong> Reference documents (<em>Domain Knowledge Doc.docx</em> and <em>Terminologies in Data.docx</em>)
+            were used to understand financial metrics and industry terminology.</li>
+        <li><strong>Dashboard Creation:</strong> Power BI (<em>Bank_Loan_Dashboard.pbix</em>) was utilized for data
+            visualization, creating interactive charts and tables for loan insights.</li>
+      </ul>
+
+      <h3>Key Insights</h3>
+      <ul>
+        <li>High-risk segments identified through default rates and credit score patterns.</li>
+        <li>Correlation between loan amount, tenure, and customer demographics.</li>
+        <li>Month-over-month trends for loan approvals and disbursements, guiding strategic decisions.</li>
       </ul>
     </section>
 
-    <!-- Methodology -->
-    <section class="methodology">
-      <h2>Methodology</h2>
-      <p>
-        The project involves multiple stages of data processing and visualization:
-      </p>
-      <ul>
-        <li>
-          <strong>Data Collection:</strong> The primary dataset, <em>financial_loan.csv</em>, was used to gather loan information.
-        </li>
-        <li>
-          <strong>Data Preparation:</strong> Data was cleaned and transformed using SQL queries (refer to <em>Queries.sql</em> and <em>Queries.docx</em>).
-        </li>
-        <li>
-          <strong>Domain Knowledge:</strong> Supporting documents (<em>Domain Knowledge Doc.docx</em> and <em>Terminologies in Data.docx</em>) provided insights into key financial metrics and loan dynamics.
-        </li>
-        <li>
-          <strong>Visualization:</strong> The prepared data was visualized in Power BI (using the <em>Bank_Loan_Dashboard.pbix</em> file) to create interactive dashboards and reports.
-        </li>
-      </ul>
-    </section>
-
-    <!-- Key Insights -->
-    <section class="key-insights">
-      <h2>Key Insights</h2>
-      <ul>
-        <li>Identification of high-risk customer segments through default analysis.</li>
-        <li>Trends in loan applications and approval rates over different time periods.</li>
-        <li>Correlation between loan amounts, customer demographics, and repayment behavior.</li>
-      </ul>
-    </section>
-
-    <!-- Embedded Interactive Dashboard -->
-    <section class="dashboard">
+    <!-- Dashboard Link (or Embedded Iframe) -->
+    <section>
       <h2>Interactive Dashboard</h2>
       <p>
-        Explore the live Power BI dashboard below to interact with the data and gain deeper insights into bank loan performance.
+        Click the link below to explore the live Power BI dashboard:
       </p>
-      <iframe title="Bank Loan Dashboard" width="800" height="500"
-              src="https://app.powerbi.com/view?r=eyJrIjoiOGIyZmRhNGEtNmRhMy00YjY3LTkwNzItN2NiN2I4NGI5ZTE0IiwidCI6IjFmNDM2ODQxLWZkMzEtNGFhYy1iNDkyLTlkMWI2OTJjMTU3YiIsImMiOjEwfQ%3D%3D&pageName=10f38291f04b18aa1cee"
-              frameborder="0" allowFullScreen="true"></iframe>
-    </section>
-
-    <!-- Additional Resources (Optional) -->
-    <section class="resources">
-      <h2>Additional Resources</h2>
-      <p>For more details, you can refer to the following supporting documents:</p>
-      <ul>
-        <li><a href="assets/Bank_Loan_Dashboard.pdf" target="_blank">Project Documentation (PDF)</a></li>
-        <li><a href="assets/Bank%20Loan%20PPT%20Power%20BI.pptx" target="_blank">Project Presentation (PPT)</a></li>
-      </ul>
+      <p>
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiOGIyZmRhNGEtNmRhMy00YjY3LTkwNzItN2NiN2I4NGI5ZTE0IiwidCI6IjFmNDM2ODQxLWZkMzEtNGFhYy1iNDkyLTlkMWI2OTJjMTU3YiIsImMiOjEwfQ%3D%3D&pageName=10f38291f04b18aa1cee"
+           class="btn" target="_blank">
+          View Dashboard
+        </a>
+      </p>
+      <!-- Alternatively, embed the dashboard as an iframe if you prefer an inline view:
+      <iframe ...></iframe>
+      -->
     </section>
   </main>
 
