@@ -1,12 +1,40 @@
-/* Base Styles */
+/* -----------------------
+   Base & Global Styles
+------------------------ */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: url('assets/bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff; /* Use white text for contrast */
+  color: #fff; /* White text for contrast against dark backgrounds */
+  position: relative; /* Needed for pseudo-element overlay */
+  min-height: 100vh;
+  background: #000; /* Fallback color if the image doesn't load */
 }
+
+/* 
+  This pseudo-element displays the background image 
+  with a semi-transparent overlay to dim the image.
+*/
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  /* Update the filename if yours is different */
+  background: url("assets/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  /* Adjust the rgba for more or less dimming */
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: darken;
+}
+
+/* -----------------------
+   Header & Navigation
+------------------------ */
 
 header {
   background: rgba(0, 0, 0, 0.8);
@@ -17,6 +45,7 @@ header {
 
 header h1 {
   margin: 0;
+  font-size: 2em;
 }
 
 nav ul {
@@ -42,9 +71,13 @@ nav ul li a.active {
   transform: scale(1.05);
 }
 
-/* Main Container with Darker Overlay */
+/* -----------------------
+   Main Content Container
+------------------------ */
+
 main {
-  background: rgba(0, 0, 0, 0.6); /* Darker overlay for better readability */
+  /* Optional overlay for extra contrast. Increase or decrease the opacity. */
+  background: rgba(0, 0, 0, 0.5);
   margin: 20px auto;
   padding: 40px;
   width: 80%;
@@ -53,24 +86,43 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Text Enhancements for Readability */
-main h2, main h3 {
-  color: #fff;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+/* Heading & Text Styles */
+main h2,
+main h3 {
+  font-size: 2em;
   margin-top: 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 main p {
-  font-size: 1.2em;      /* Larger font size */
-  line-height: 1.6;     /* More line spacing */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
   margin-bottom: 1em;
 }
 
-/* Footer */
+/* -----------------------
+   Footer
+------------------------ */
+
 footer {
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   text-align: center;
   padding: 15px;
+}
+
+/* -----------------------
+   Responsive Design
+------------------------ */
+
+@media (max-width: 768px) {
+  main {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+  }
 }
