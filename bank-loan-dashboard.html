@@ -6,31 +6,38 @@
   <title>Project 1 - Bank Loan Dashboard</title>
   <link rel="stylesheet" href="Styling.css" />
   <style>
-    /* Additional inline styles for the animated LED-style arrows in the flowchart */
-    .arrow {
-      display: inline-block;
-      font-size: 2em;
-      color: #ffd700; /* Gold color for a dramatic LED look */
-      margin: 0 10px;
-      animation: blink 1s infinite alternate;
-    }
-    
+    /* --- Additional Inline Styles for Dramatic Section Headings & Flowchart --- */
+
+    /* Faster blinking arrow (0.5s) */
     @keyframes blink {
       from { opacity: 0.2; }
       to { opacity: 1; }
     }
-    
-    /* Adjust the flowchart container for proper alignment */
-    .flowchart {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: nowrap;
+    .arrow {
+      display: inline-block;
+      font-size: 2em;
+      color: #ffd700; /* Gold for dramatic effect */
+      margin: 0 10px;
+      animation: blink 0.5s infinite alternate;
     }
-    
-    /* Ensure each flow-step is centered */
-    .flow-step {
-      text-align: center;
+
+    /* Dramatic section headings style */
+    .dramatic-section {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-left: 5px solid #ffd700;
+      border-radius: 4px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    .dramatic-section h3 {
+      margin-top: 0;
+      color: #ffd700;
+      font-size: 1.8em;
+    }
+    .dramatic-section p, .dramatic-section ul {
+      font-size: 1.2em;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -47,7 +54,7 @@
   </header>
 
   <main>
-    <!-- Project Overview Section -->
+    <!-- Overview Section -->
     <section class="project-overview card">
       <h2>Overview</h2>
       <div class="flex-container" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
@@ -56,82 +63,79 @@
         </div>
         <div class="flex-item" style="flex: 2;">
           <p>
-            In a world where every financial decision holds the promise of transforming lives, the <strong>Bank Loan Dashboard</strong> was conceived as a beacon of clarity. By transforming raw loan data into an immersive narrative, this project uncovers hidden risks, reveals emerging trends, and empowers decision-makers with actionable insights.
+            In a world where every financial decision holds the promise of transforming lives, the <strong>Bank Loan Dashboard</strong> was conceived as a beacon of clarity. This project transforms raw loan data into an immersive narrative—uncovering hidden risks, revealing emerging trends, and empowering decision-makers with actionable insights.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Detailed Project Write-up Section -->
-    <section class="project-details card">
-      <h2>Project Details</h2>
-      
+    <!-- Our Mission Section -->
+    <section class="dramatic-section card">
       <h3>Our Mission</h3>
       <p>
-        Imagine a future where every loan decision is backed by crystal-clear insight. Our mission was to create an analytical masterpiece that not only visualizes data but tells the unique story of each customer's financial journey.
+        Imagine a future where every loan decision is illuminated by crystal-clear insight. Our mission is to harness the power of data to not only visualize numbers but to narrate the story behind each customer's financial journey, driving impactful and strategic decisions.
       </p>
-      
+    </section>
+
+    <!-- The Quest Section -->
+    <section class="dramatic-section card">
       <h3>The Quest</h3>
       <ul>
-        <li><strong>Illuminate the Unknown:</strong> Capture critical KPIs—from surges in loan applications to the silent signals of potential defaults.</li>
-        <li><strong>Uncover Hidden Patterns:</strong> Decode intricate relationships between loan amounts, repayment behaviors, and customer demographics.</li>
-        <li><strong>Empower Decisions:</strong> Develop an interactive platform that inspires proactive, strategic decision-making.</li>
-      </ul>
-
-      <h3>The Journey</h3>
-      <p>
-        Our journey began with a treasure trove of data in <em>financial_loan.csv</em>. Through meticulous cleaning using SQL and insights drawn from domain expertise (via documents like <em>Domain Knowledge Doc.docx</em> and <em>Terminologies in Data.docx</em>), we set the stage for visualization. With the dynamic power of Power BI and Tableau, this dashboard emerged as a living narrative of financial health.
-      </p>
-      
-      <h3>Revelations</h3>
-      <ul>
-        <li><strong>Risk Unveiled:</strong> High-risk segments emerge, turning abstract figures into actionable intelligence.</li>
-        <li><strong>Temporal Trends:</strong> Dynamic shifts in loan approvals highlight pivotal moments in financial strategy.</li>
-        <li><strong>Correlation Chronicles:</strong> Intriguing links between metrics narrate a compelling story of borrower behavior.</li>
+        <li><strong>Illuminate the Unknown:</strong> Capture critical KPIs—from surges in loan applications to subtle warnings of potential defaults.</li>
+        <li><strong>Uncover Hidden Patterns:</strong> Decode the intricate relationships between loan amounts, repayment behaviors, and customer profiles.</li>
+        <li><strong>Empower Decisions:</strong> Create an interactive platform that transforms raw data into actionable intelligence.</li>
       </ul>
     </section>
 
-    <!-- The Journey Flow (Animated Flowchart) Section -->
-    <section class="journey-flow card">
-      <h2>The Journey Flow</h2>
-      <div class="flowchart">
-        <div class="flow-step">
+    <!-- The Journey Section -->
+    <section class="dramatic-section card">
+      <h3>The Journey</h3>
+      <p>
+        Our journey began with a treasure trove of data stored in <em>financial_loan.csv</em>. Through rigorous data cleaning using SQL and drawing insights from key industry documents, we set the stage for visualization. Leveraging the dynamic capabilities of Power BI and Tableau, we crafted a dashboard that tells a vivid story of financial health.
+      </p>
+      <div class="flowchart" style="display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; margin-top: 20px;">
+        <div class="flow-step" style="text-align: center; min-width: 150px;">
           <div class="step-icon">📁</div>
           <div class="step-title">Data Collection</div>
-          <div class="step-desc">Gather raw data</div>
         </div>
         <span class="arrow">→</span>
-        <div class="flow-step">
+        <div class="flow-step" style="text-align: center; min-width: 150px;">
           <div class="step-icon">🧹</div>
           <div class="step-title">Data Cleaning</div>
-          <div class="step-desc">Refine with SQL</div>
         </div>
         <span class="arrow">→</span>
-        <div class="flow-step">
+        <div class="flow-step" style="text-align: center; min-width: 150px;">
           <div class="step-icon">💡</div>
           <div class="step-title">Insight Discovery</div>
-          <div class="step-desc">Uncover hidden patterns</div>
         </div>
         <span class="arrow">→</span>
-        <div class="flow-step">
+        <div class="flow-step" style="text-align: center; min-width: 150px;">
           <div class="step-icon">📊</div>
           <div class="step-title">Dashboard Creation</div>
-          <div class="step-desc">Visualize via BI tools</div>
         </div>
         <span class="arrow">→</span>
-        <div class="flow-step">
+        <div class="flow-step" style="text-align: center; min-width: 150px;">
           <div class="step-icon">🚀</div>
           <div class="step-title">Empower Decisions</div>
-          <div class="step-desc">Drive strategy</div>
         </div>
       </div>
+    </section>
+
+    <!-- Revelations Section -->
+    <section class="dramatic-section card">
+      <h3>Revelations</h3>
+      <ul>
+        <li><strong>Risk Unveiled:</strong> High-risk segments emerge, converting abstract data into crystal-clear intelligence.</li>
+        <li><strong>Temporal Trends:</strong> Shifts in loan approvals map out pivotal moments that drive financial strategy.</li>
+        <li><strong>Correlation Chronicles:</strong> Revealing compelling links between loan metrics and borrower behavior to inform smarter decisions.</li>
+      </ul>
     </section>
 
     <!-- Interactive Dashboard (Power BI) Section -->
     <section class="dashboard card dashboard-container">
       <h2>Interactive Dashboard (Power BI)</h2>
       <p>
-        Immerse yourself in our live Power BI dashboard below. Engage with the visuals to uncover insights that drive smarter, data-backed decisions.
+        Immerse yourself in our live Power BI dashboard below. Engage with the visuals to uncover insights that drive data-backed decisions.
       </p>
       <iframe title="Bank Loan Dashboard (Power BI)" width="100%" height="500"
               src="https://app.powerbi.com/view?r=eyJrIjoiOGIyZmRhNGEtNmRhMy00YjY3LTkwNzItN2NiN2I4NGI5ZTE0IiwidCI6IjFmNDM2ODQxLWZkMzEtNGFhYy1iNDkyLTlkMWI2OTJjMTU3YiIsImMiOjEwfQ%3D%3D&pageName=10f38291f04b18aa1cee"
@@ -142,7 +146,7 @@
     <section class="dashboard card dashboard-container">
       <h2>Interactive Dashboard (Tableau)</h2>
       <p>
-        For an alternative perspective, explore our Tableau dashboard below. This interactive view adds another layer of insight, complementing our Power BI analysis.
+        For an alternative perspective, explore our Tableau dashboard below. This view adds another layer of insight, complementing our Power BI analysis.
       </p>
       <div class="tableauPlaceholder" id="viz1743329163461" style="position: relative">
         <noscript>
