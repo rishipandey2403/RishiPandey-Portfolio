@@ -22,29 +22,25 @@
     <!-- Project Overview -->
     <section class="project-overview">
       <h2>Overview</h2>
-      <img src="assets/bank-loan-small.jpg" alt="Bank Loan Project" style="max-width:300px; float:right; margin:0 0 20px 20px;" />
+      <img src="assets/bank-loan-small.jpg" alt="Bank Loan Dashboard" style="max-width:300px; float:right; margin:0 0 20px 20px;">
       <p>
-        The Bank Loan Dashboard project is an interactive solution designed to provide comprehensive insights into bank loan data. 
-        It leverages advanced data analytics techniques to assess loan performance, risk factors, and overall financial trends, 
-        enabling financial institutions to make data-driven decisions.
+        The Bank Loan Dashboard project is an interactive solution designed to provide comprehensive insights into bank loan data. It leverages advanced data analytics techniques to assess loan performance, risk factors, and overall financial trends, enabling financial institutions to make data-driven decisions.
       </p>
     </section>
 
-    <!-- Detailed Project Write-up -->
+    <!-- Detailed Write-up -->
     <section class="project-details">
       <h2>Project Details</h2>
       <h3>Objectives</h3>
       <ul>
-        <li>Visualize key performance indicators (KPIs) such as total loan applications, funded amounts, and default rates.</li>
+        <li>Visualize key performance indicators such as total loan applications, funded amounts, and default rates.</li>
         <li>Identify high-risk borrower segments and monitor trends over time.</li>
         <li>Provide an interactive dashboard for real-time monitoring and strategic decision-making.</li>
       </ul>
 
       <h3>Methodology</h3>
       <p>
-        Data was collected from the <em>financial_loan.csv</em> dataset and preprocessed using SQL queries. Domain-specific documents 
-        (<em>Domain Knowledge Doc.docx</em> and <em>Terminologies in Data.docx</em>) helped in setting the KPIs. Finally, interactive 
-        dashboards were built using <strong>Power BI</strong> and <strong>Tableau</strong> to visualize the results.
+        Data was collected from the <em>financial_loan.csv</em> dataset and preprocessed using SQL queries. Domain-specific documents (<em>Domain Knowledge Doc.docx</em> and <em>Terminologies in Data.docx</em>) informed the KPI selection. Interactive dashboards were built using both <strong>Power BI</strong> and <strong>Tableau</strong> to visualize the data.
       </p>
 
       <h3>Key Insights</h3>
@@ -55,53 +51,68 @@
       </ul>
     </section>
 
-    <!-- Interactive Dashboard (Power BI) -->
+    <!-- Interactive Dashboard (Power BI) Section -->
     <section class="dashboard">
       <h2>Interactive Dashboard (Power BI)</h2>
       <p>
         Explore the live Power BI dashboard below to interact with the data and gain deeper insights into bank loan performance.
       </p>
-      <iframe 
-        title="Bank Loan Dashboard (Power BI)" 
-        width="800" 
-        height="500"
-        src="https://app.powerbi.com/view?r=eyJrIjoiOGIyZmRhNGEtNmRhMy00YjY3LTkwNzItN2NiN2I4NGI5ZTE0IiwidCI6IjFmNDM2ODQxLWZkMzEtNGFhYy1iNDkyLTlkMWI2OTJjMTU3YiIsImMiOjEwfQ%3D%3D&pageName=10f38291f04b18aa1cee"
-        frameborder="0" 
-        allowFullScreen="true">
-      </iframe>
+      <iframe title="Bank Loan Dashboard (Power BI)" width="800" height="500"
+              src="https://app.powerbi.com/view?r=eyJrIjoiOGIyZmRhNGEtNmRhMy00YjY3LTkwNzItN2NiN2I4NGI5ZTE0IiwidCI6IjFmNDM2ODQxLWZkMzEtNGFhYy1iNDkyLTlkMWI2OTJjMTU3YiIsImMiOjEwfQ%3D%3D&pageName=10f38291f04b18aa1cee"
+              frameborder="0" allowFullScreen="true"></iframe>
     </section>
 
-    <!-- Alternative Visualization (Tableau) -->
+    <!-- Interactive Dashboard (Tableau) Section -->
     <section class="dashboard">
-      <h2>Alternative Visualization (Tableau)</h2>
+      <h2>Interactive Dashboard (Tableau)</h2>
       <p>
-        This Tableau dashboard provides another perspective on the same Bank Loan data, allowing users to analyze trends, 
-        metrics, and patterns for more robust decision-making.
+        This Tableau dashboard provides an alternative visualization of the bank loan data. Use the interactive features to explore trends and patterns.
       </p>
-      <iframe 
-  src="https://public.tableau.com/views/Bank_Loan_Dashboard_17433280305910/Overview?:embed=y&:display_count=no&:showVizHome=no" 
-  width="100%" 
-  height="600" 
-  frameborder="0" 
-  allowfullscreen="true">
-</iframe>
+      <div class="tableauPlaceholder" id="viz1743329163461" style="position: relative">
+        <noscript>
+          <a href="#"><img alt="Overview" src="https://public.tableau.com/static/images/Bo/Book1_17431610791620/Overview/1_rss.png" style="border: none" /></a>
+        </noscript>
+        <object class="tableauViz" style="display:none;">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+          <param name="name" value="Book1_17431610791620/Overview" />
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param name="static_image" value="https://public.tableau.com/static/images/Bo/Book1_17431610791620/Overview/1.png" />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="en-GB" />
+        </object>
+      </div>
+      <script type="text/javascript">
+        var divElement = document.getElementById('viz1743329163461');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width = '1600px';
+          vizElement.style.height = '927px';
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width = '1600px';
+          vizElement.style.height = '927px';
+        } else {
+          vizElement.style.width = '100%';
+          vizElement.style.height = '4477px';
+        }
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
     </section>
 
     <!-- Additional Resources -->
     <section class="resources">
       <h2>Additional Resources</h2>
-      <p>Click the links below to view the project documentation:</p>
       <ul>
-        <li>
-          <a href="assets/Bank%20Loan%20PPT%20Power%20BI.pptx" target="_blank">
-            View Project Presentation (PPT)
-          </a>
-        </li>
-        <li>
-          <a href="assets/Bank_Loan_Dashboard.pdf" target="_blank">
-            View Project Documentation (PDF)
-          </a>
-        </li>
+        <li><a href="assets/Bank%20Loan%20PPT%20Power%20BI.pptx" target="_blank">Project Presentation (PPT)</a></li>
+        <li><a href="assets/Bank_Loan_Dashboard.pdf" target="_blank">Project Documentation (PDF)</a></li>
       </ul>
     </section>
   </main>
