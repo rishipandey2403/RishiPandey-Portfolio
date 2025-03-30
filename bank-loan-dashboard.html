@@ -5,6 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Project 1 - Bank Loan Dashboard</title>
   <link rel="stylesheet" href="Styling.css" />
+  <style>
+    /* Additional inline styles for enhanced layout */
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .flex-item {
+      flex: 1;
+      min-width: 300px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    .dashboard-container {
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -20,72 +43,66 @@
 
   <main>
     <!-- Project Overview Section -->
-    <section class="project-overview">
+    <section class="project-overview card">
       <h2>Overview</h2>
-      <img src="assets/bank-loan-small.jpg" alt="Bank Loan Dashboard" style="max-width:300px; float:right; margin:0 0 20px 20px;">
-      <p>
-        In a world where every financial decision holds the promise of transforming lives, the <strong>Bank Loan Dashboard</strong> project was conceived as a beacon of clarity.
-        Through the fusion of advanced analytics and visual storytelling, this project transforms raw loan data into an immersive narrative—one that reveals hidden risks, uncovers trends, and inspires strategic action.
-      </p>
+      <div class="flex-container">
+        <div class="flex-item">
+          <img src="assets/bank_loan.jpg" alt="Bank Loan Dashboard" style="width:100%; border-radius:8px;">
+        </div>
+        <div class="flex-item">
+          <p>
+            In a world where every financial decision holds the promise of transforming lives, the <strong>Bank Loan Dashboard</strong> was conceived as a beacon of clarity. 
+            By transforming raw loan data into an immersive narrative, this project uncovers hidden risks, reveals emerging trends, and empowers decision-makers with actionable insights.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Detailed Project Write-up Section -->
-    <section class="project-details">
+    <section class="project-details card">
       <h2>Project Details</h2>
-      
-      <h3>Our Mission</h3>
-      <p>
-        Imagine a future where every loan decision is backed by precise, insightful data. Our mission was to create an analytical masterpiece that not only visualizes data but also tells the unique story behind each customer's financial journey.
-      </p>
-      
-      <h3>The Quest</h3>
-      <ul>
-        <li>
-          <strong>Illuminate the Unknown:</strong> Capture critical KPIs—from surges in loan applications to the silent signals of potential defaults.
-        </li>
-        <li>
-          <strong>Uncover Hidden Patterns:</strong> Decode the intricate relationships between borrower behavior and risk factors, turning abstract numbers into actionable intelligence.
-        </li>
-        <li>
-          <strong>Empower Decisions:</strong> Develop an interactive platform that fuels real-time, strategic decision-making.
-        </li>
-      </ul>
-
-      <h3>The Journey</h3>
-      <p>
-        Our journey began with a treasure trove of data from the <em>financial_loan.csv</em> dataset. After meticulous cleaning and transformation using SQL, we leveraged domain expertise (sourced from vital documents like <em>Domain Knowledge Doc.docx</em> and <em>Terminologies in Data.docx</em>) to set the stage. Then, employing the visual prowess of Power BI and Tableau, we crafted dashboards that bring this data to life.
-      </p>
-      
-      <h3>Revelations</h3>
-      <ul>
-        <li>
-          <strong>Risk Unveiled:</strong> High-risk segments are spotlighted, transforming mere statistics into clear, actionable insights.
-        </li>
-        <li>
-          <strong>Temporal Trends:</strong> Dynamic shifts in loan approvals and disbursements reveal pivotal moments that drive financial strategy.
-        </li>
-        <li>
-          <strong>Correlation Chronicles:</strong> Intriguing links between loan amounts, customer profiles, and repayment behaviors narrate a compelling story of financial health.
-        </li>
-      </ul>
+      <div class="flex-container">
+        <div class="flex-item">
+          <h3>Our Mission & The Quest</h3>
+          <p>
+            Imagine a future where every loan decision is backed by data-driven clarity. Our mission was to craft an analytical masterpiece that transforms raw numbers into a compelling story—one that illuminates the unknown and deciphers the hidden patterns behind borrower behavior.
+          </p>
+          <ul>
+            <li><strong>Illuminate the Unknown:</strong> Capture critical KPIs from surges in loan applications to subtle warnings of potential defaults.</li>
+            <li><strong>Uncover Hidden Patterns:</strong> Decode intricate relationships between loan amounts, repayment behaviors, and customer demographics.</li>
+            <li><strong>Empower Decisions:</strong> Develop an interactive platform that inspires strategic, proactive decision-making.</li>
+          </ul>
+        </div>
+        <div class="flex-item">
+          <h3>The Journey & Revelations</h3>
+          <p>
+            Our journey began with the <em>financial_loan.csv</em> dataset—a treasure trove of financial data. Through meticulous data cleansing with SQL and insights drawn from industry documents, we set the stage for visualization. Employing the visual prowess of both Power BI and Tableau, we brought this narrative to life.
+          </p>
+          <ul>
+            <li><strong>Risk Unveiled:</strong> High-risk segments emerged, turning abstract figures into clear, actionable intelligence.</li>
+            <li><strong>Temporal Trends:</strong> Dynamic shifts in loan approvals mapped out pivotal moments influencing financial strategies.</li>
+            <li><strong>Correlation Chronicles:</strong> Intriguing links between loan metrics and borrower profiles narrate a compelling story of financial health.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Interactive Dashboard (Power BI) Section -->
-    <section class="dashboard">
+    <section class="dashboard card dashboard-container">
       <h2>Interactive Dashboard (Power BI)</h2>
       <p>
-        Immerse yourself in our live Power BI dashboard below. Engage with the visuals and uncover insights that shape smarter, more strategic decisions.
+        Immerse yourself in our live Power BI dashboard below. Engage with the visuals to uncover insights that drive smarter, data-backed decisions.
       </p>
-      <iframe title="Bank Loan Dashboard (Power BI)" width="800" height="500"
+      <iframe title="Bank Loan Dashboard (Power BI)" width="100%" height="500"
               src="https://app.powerbi.com/view?r=eyJrIjoiOGIyZmRhNGEtNmRhMy00YjY3LTkwNzItN2NiN2I4NGI5ZTE0IiwidCI6IjFmNDM2ODQxLWZkMzEtNGFhYy1iNDkyLTlkMWI2OTJjMTU3YiIsImMiOjEwfQ%3D%3D&pageName=10f38291f04b18aa1cee"
               frameborder="0" allowFullScreen="true"></iframe>
     </section>
 
     <!-- Interactive Dashboard (Tableau) Section -->
-    <section class="dashboard">
+    <section class="dashboard card dashboard-container">
       <h2>Interactive Dashboard (Tableau)</h2>
       <p>
-        For an alternative perspective, explore our Tableau dashboard below. This interactive view complements our Power BI insights by offering additional layers of analysis.
+        For an alternative visualization, explore our Tableau dashboard below. This interactive view adds another layer of insight, complementing our Power BI analysis.
       </p>
       <div class="tableauPlaceholder" id="viz1743329163461" style="position: relative">
         <noscript>
@@ -127,7 +144,7 @@
     </section>
 
     <!-- Additional Resources Section -->
-    <section class="resources">
+    <section class="resources card">
       <h2>Additional Resources</h2>
       <p>For a deeper dive into our process and findings, explore these supporting documents:</p>
       <ul>
