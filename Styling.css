@@ -5,10 +5,10 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #fff; /* White text for contrast */
+  color: #fff;
   position: relative;
   min-height: 100vh;
-  background: #000; /* Fallback if image doesn't load */
+  background: #000;
 }
 
 body::before {
@@ -21,7 +21,7 @@ body::before {
   z-index: -1;
   background: url("assets/bg.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.4); /* Dim the image */
+  background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: darken;
 }
 
@@ -67,7 +67,7 @@ nav ul li a.active {
    Main Content Container
 ------------------------ */
 main {
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for content */
+  background: rgba(0, 0, 0, 0.5);
   margin: 20px auto;
   padding: 40px;
   width: 80%;
@@ -133,4 +133,16 @@ footer {
   nav ul {
     flex-direction: column;
   }
+}
+
+/* -----------------------
+   Tableau Section Styling
+------------------------ */
+.tableau-section {
+  margin-top: 40px;
+}
+
+.tableau-container iframe {
+  border: 2px solid #0073e6;
+  border-radius: 8px;
 }
