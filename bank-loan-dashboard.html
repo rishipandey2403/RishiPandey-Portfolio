@@ -6,46 +6,31 @@
   <title>Project 1 - Bank Loan Dashboard</title>
   <link rel="stylesheet" href="Styling.css" />
   <style>
-    /* --- Additional inline styles for animations and updated text colors --- */
-    
-    /* Animation for fadeIn with slight upward motion */
-    @keyframes fadeInSlide {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Additional inline styles for the animated LED-style arrows in the flowchart */
+    .arrow {
+      display: inline-block;
+      font-size: 2em;
+      color: #ffd700; /* Gold color for a dramatic LED look */
+      margin: 0 10px;
+      animation: blink 1s infinite alternate;
     }
     
-    /* Apply animation to main content sections */
-    main section {
-      animation: fadeInSlide 1s ease-out;
+    @keyframes blink {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
     }
     
-    /* Override text color to a brighter shade and add extra shadow */
-    body, p, li, h2, h3 {
-      color: #fffae6; /* a soft, highlighted off-white/yellow tone */
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    /* Adjust the flowchart container for proper alignment */
+    .flowchart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
     }
     
-    /* Enhance header text */
-    header h1 {
-      color: #ffd700; /* gold color for a dramatic look */
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-    }
-    
-    /* Flowchart Animation (if used) */
-    .journey-flow {
-      animation: fadeInSlide 1.2s ease-out both;
-    }
-    
-    /* Optional: Hover animation on links */
-    a:hover {
-      opacity: 0.9;
-      transition: opacity 0.3s ease;
+    /* Ensure each flow-step is centered */
+    .flow-step {
+      text-align: center;
     }
   </style>
 </head>
@@ -65,14 +50,13 @@
     <!-- Project Overview Section -->
     <section class="project-overview card">
       <h2>Overview</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-        <div style="flex: 1; min-width: 250px;">
-          <img src="assets/bank_loan.jpg" alt="Bank Loan Dashboard" style="width: 100%; border-radius:8px;">
+      <div class="flex-container" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+        <div class="flex-item" style="flex: 1; min-width: 250px;">
+          <img src="assets/bank-loan-small.jpg" alt="Bank Loan Dashboard" style="width: 100%; border-radius:8px;">
         </div>
-        <div style="flex: 2;">
+        <div class="flex-item" style="flex: 2;">
           <p>
-            In a world where every financial decision holds the promise of transforming lives, the <strong>Bank Loan Dashboard</strong> was conceived as a beacon of clarity. 
-            By transforming raw loan data into an immersive narrative, this project uncovers hidden risks, reveals emerging trends, and empowers decision-makers with actionable insights.
+            In a world where every financial decision holds the promise of transforming lives, the <strong>Bank Loan Dashboard</strong> was conceived as a beacon of clarity. By transforming raw loan data into an immersive narrative, this project uncovers hidden risks, reveals emerging trends, and empowers decision-makers with actionable insights.
           </p>
         </div>
       </div>
@@ -107,31 +91,35 @@
       </ul>
     </section>
 
-    <!-- The Journey Flow (Optional Animated Flowchart) Section -->
+    <!-- The Journey Flow (Animated Flowchart) Section -->
     <section class="journey-flow card">
       <h2>The Journey Flow</h2>
-      <div class="flowchart" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; position: relative; padding-top: 20px;">
-        <div class="flow-step" style="flex: 1; min-width: 150px; text-align: center;">
+      <div class="flowchart">
+        <div class="flow-step">
           <div class="step-icon">📁</div>
           <div class="step-title">Data Collection</div>
-          <div class="step-desc">Gather raw loan data</div>
+          <div class="step-desc">Gather raw data</div>
         </div>
-        <div class="flow-step" style="flex: 1; min-width: 150px; text-align: center;">
+        <span class="arrow">→</span>
+        <div class="flow-step">
           <div class="step-icon">🧹</div>
           <div class="step-title">Data Cleaning</div>
           <div class="step-desc">Refine with SQL</div>
         </div>
-        <div class="flow-step" style="flex: 1; min-width: 150px; text-align: center;">
+        <span class="arrow">→</span>
+        <div class="flow-step">
           <div class="step-icon">💡</div>
           <div class="step-title">Insight Discovery</div>
           <div class="step-desc">Uncover hidden patterns</div>
         </div>
-        <div class="flow-step" style="flex: 1; min-width: 150px; text-align: center;">
+        <span class="arrow">→</span>
+        <div class="flow-step">
           <div class="step-icon">📊</div>
           <div class="step-title">Dashboard Creation</div>
           <div class="step-desc">Visualize via BI tools</div>
         </div>
-        <div class="flow-step" style="flex: 1; min-width: 150px; text-align: center;">
+        <span class="arrow">→</span>
+        <div class="flow-step">
           <div class="step-icon">🚀</div>
           <div class="step-title">Empower Decisions</div>
           <div class="step-desc">Drive strategy</div>
