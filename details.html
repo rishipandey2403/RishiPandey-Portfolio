@@ -8,8 +8,9 @@
             margin: 0;
             font-family: Arial, sans-serif;
             color: #f1f1f1;
-            background-color: #000000;
+            background-color: #1e1e1e;
         }
+
         .header {
             text-align: center;
             padding: 50px;
@@ -17,40 +18,96 @@
             background-size: cover;
             color: #fff;
         }
+
         .header h1 {
             font-size: 2.5em;
             margin: 0;
         }
+
         .header p {
             font-size: 1.2em;
             margin-top: 10px;
         }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        .navbar a {
+            color: #f1f1f1;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
         .section {
-            background-color: rgba(0, 0, 0, 0.8);
             margin: 20px;
             padding: 20px;
+            background-color: #2c2c2c;
             border-radius: 8px;
         }
+
         .section h2 {
             color: #ffd700;
             margin-bottom: 10px;
         }
+
         .content {
-            margin: 20px;
+            margin: 10px 0;
             padding: 15px;
-            background-color: rgba(50, 50, 50, 0.6);
+            background-color: #333;
             border-radius: 8px;
         }
+
+        .content ul {
+            list-style-type: square;
+        }
+
         a {
             color: #ffd700;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
+        }
+
+        button {
+            background-color: #ffd700;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e0c400;
+        }
+
+        .image {
+            display: block;
+            margin: 10px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="details.html">About Me</a>
+</div>
 
 <div class="header">
     <h1>Unfolding the Data Odyssey</h1>
@@ -59,25 +116,27 @@
 
 <div class="section">
     <h2>Professional Experience</h2>
+    <img src="https://source.unsplash.com/800x400/?data,analysis" alt="Data Analysis" class="image">
     <div class="content">
         <h3>Consultant (Assistant Manager) - Deloitte (Jun 2022 – Apr 2024)</h3>
         <ul>
-            <li>Spearheaded Unilever UK data management, boosting efficiency by 60% and product performance by 40%.</li>
-            <li>Engineered data-driven solutions using Azure, increasing decision accuracy by 25%.</li>
-            <li>Orchestrated dashboards using Power BI, achieving 80% accuracy.</li>
-            <li>Led a team of 4 Analysts, reducing costs by 42% and improving efficiency by 35%.</li>
-            <li>Utilized Python, Data-Bricks, JIRA, and Azure for model enhancement with 85% accuracy.</li>
+            <li>Led data management for Unilever UK, boosting efficiency by 60% and product performance by 40%.</li>
+            <li>Implemented data-driven solutions using Azure, enhancing decision accuracy by 25%.</li>
+            <li>Developed Power BI dashboards, achieving 80% accuracy.</li>
+            <li>Managed a team of 4 Analysts, cutting costs by 42% and improving efficiency by 35%.</li>
+            <li>Optimized models with Python and Data-Bricks, achieving 85% accuracy.</li>
         </ul>
         <h3>Software Engineer - LTI MindTree (Jun 2021 – Jun 2022)</h3>
         <ul>
-            <li>Enhanced coding efficiency using .Net Core solutions, increasing client satisfaction by 90%.</li>
-            <li>Accelerated backend app delivery speed by 30%.</li>
+            <li>Enhanced backend efficiency using .Net Core, raising client satisfaction by 90%.</li>
+            <li>Improved app delivery speed by 30%.</li>
         </ul>
     </div>
 </div>
 
 <div class="section">
     <h2>Academic Record</h2>
+    <img src="https://source.unsplash.com/800x400/?education,graduation" alt="Education" class="image">
     <div class="content">
         <p>PGDM in Big Data Analytics - Goa Institute of Management (2024-2025)</p>
         <p>B.Tech in Computer Science - XYZ University (2017-2021)</p>
@@ -86,16 +145,18 @@
 
 <div class="section">
     <h2>Projects</h2>
+    <img src="https://source.unsplash.com/800x400/?coding,projects" alt="Projects" class="image">
     <div class="content">
         <ul>
             <li>Pizza Sales Analysis using SQL - Analyzing sales trends and customer preferences.</li>
-            <li>Sustainable Tourism Analysis in Goa using Power BI - Understanding rise/decline patterns.</li>
+            <li>Sustainable Tourism Analysis in Goa using Power BI - Exploring rise and decline patterns.</li>
         </ul>
     </div>
 </div>
 
 <div class="section">
     <h2>Certifications & Achievements</h2>
+    <img src="https://source.unsplash.com/800x400/?certificate,achievement" alt="Achievements" class="image">
     <div class="content">
         <ul>
             <li>Certified Data Scientist - XYZ Academy</li>
@@ -106,6 +167,7 @@
 
 <div class="section">
     <h2>Core Competencies</h2>
+    <img src="https://source.unsplash.com/800x400/?skills,competencies" alt="Skills" class="image">
     <div class="content">
         <p>Data Analytics, Python, SQL, Power BI, Big Data, Azure, Machine Learning</p>
     </div>
@@ -113,6 +175,7 @@
 
 <div class="section">
     <h2>Contact</h2>
+    <img src="https://source.unsplash.com/800x400/?contact,connect" alt="Contact" class="image">
     <div class="content">
         <p>LinkedIn: <a href="https://www.linkedin.com/in/rishi-pandey-48a306169" target="_blank">Rishi Pandey</a></p>
         <p>GitHub: <a href="https://github.com/rishipandey2403" target="_blank">Rishi Pandey</a></p>
