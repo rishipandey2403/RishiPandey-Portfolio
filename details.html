@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Rishi Pandey</title>
+  <link rel="stylesheet" href="Styling.css" />
+  <style>
+    /* Additional inline styles for the details page animations and highlights */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animated-section {
+      animation: fadeIn 1s ease-out;
+      margin-bottom: 40px;
+    }
+    .section-heading {
+      color: #ffd700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    .content-block {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #fffae6;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+    .highlight {
+      color: #ffd700;
+      font-weight: bold;
+    }
+    /* Call-to-action button style */
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #28a745, #218838);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(45deg, #218838, #1e7e34);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>About Me - The Data Journey</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="details.html" class="active">About Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main style="padding: 40px 20px;">
+    <!-- Professional Journey Section -->
+    <section class="animated-section card">
+      <div class="section-heading">My Professional Journey</div>
+      <div class="content-block">
+        <p>
+          I am Rishi Pandey, a 25-year-old Data Analyst, Business Analyst, and Data Scientist with a passion for transforming raw data into strategic insights.
+          My journey began with a strong academic foundation—a PGDM in Big Data Analytics from Goa Institute of Management—where I mastered the art of analytics,
+          and earned accolades for innovative problem solving.
+        </p>
+        <p>
+          At Deloitte, as a Consultant (Assistant Manager), I spearheaded transformative projects for global giants like Unilever UK,
+          engineering data-driven solutions on Azure that boosted product performance by <span class="highlight">40%</span> and improved operational efficiency significantly.
+        </p>
+      </div>
+    </section>
+
+    <!-- Amex Internship Section -->
+    <section class="animated-section card">
+      <div class="section-heading">Reporting Insights & Operations at American Express</div>
+      <div class="content-block">
+        <p>
+          In my most recent six-month stint (April–October 2025) as a Reporting Insights & Operations Intern at American Express, I was entrusted with
+          delivering actionable insights for one of the world’s most admired financial institutions. At Amex, I navigated through complex data sets,
+          built robust reports, and influenced strategy by translating granular data into clear, impactful narratives.
+        </p>
+        <p>
+          The role demanded a blend of technical acumen and business savvy—requiring expertise in Hive, SQL, Python, Tableau, and Power BI—
+          all of which I employed to drive forward-thinking initiatives that enhanced sales performance and operational efficiency.
+        </p>
+        <p>
+          At Amex, the mantra was "You Lead the Way. We’ve Got Your Back." This ethos fueled my determination to excel,
+          ensuring that every report and insight I delivered was aligned with the company's commitment to excellence.
+        </p>
+      </div>
+    </section>
+
+    <!-- Analytical Expertise & Core Competencies Section -->
+    <section class="animated-section card">
+      <div class="section-heading">Analytical Expertise & Core Competencies</div>
+      <div class="content-block">
+        <p>
+          My technical toolkit is designed for the future: proficiency in SQL, Python, Power BI, Tableau, Azure, and more.
+          I leverage advanced analytics techniques—from predictive modeling to deep learning—to convert complex datasets into strategic business intelligence.
+        </p>
+        <ul>
+          <li><span class="highlight">Data Mastery:</span> Expert in transforming raw data into actionable insights.</li>
+          <li><span class="highlight">Innovative Problem-Solving:</span> Crafting solutions that drive operational and strategic impact.</li>
+          <li><span class="highlight">Cross-Functional Collaboration:</span> Seamlessly integrating analytics into business strategy.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Vision & Aspirations Section -->
+    <section class="animated-section card">
+      <div class="section-heading">Vision for the Future</div>
+      <div class="content-block">
+        <p>
+          My vision is simple yet bold: to harness the power of data to shape a world where decisions are informed, precise, and transformative.
+          I aspire to join top-tier firms—be it MAANG, Fortune 500 companies, or global financial institutions—where my expertise in analytics
+          can drive innovative solutions and create lasting impact.
+        </p>
+        <p>
+          I believe that every dataset has a story, and my goal is to tell those stories in ways that not only inform but inspire action.
+          Together, we can transform the way businesses understand and utilize data to achieve unprecedented growth and efficiency.
+        </p>
+        <a href="projects.html" class="cta-btn">Explore My Projects</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 20px; background: rgba(0,0,0,0.8);">
+    <p>&copy; 2025 Rishi Pandey. All rights reserved.</p>
+  </footer>
+</body>
+</html>
