@@ -4,76 +4,88 @@
   <meta charset="UTF-8">
   <title>My Journey - Rishi Pandey</title>
   <link rel="stylesheet" href="Styling.css" />
-  <!-- Optional Inline Styles for Additional Customization -->
   <style>
-    /* Similar animations as index.html */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Base Page Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
     }
-    .hero {
-      animation: fadeInDown 1s ease-out;
+    header {
+      background-color: #0a4275;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
     }
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
     }
-    .content-section {
-      animation: slideIn 1s ease-out;
-      margin: 40px auto;
-      padding: 40px;
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: right;
+      background-color: #0a4275;
+    }
+    nav ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffd700; /* Gold hover */
+    }
+
+    /* Card Section Styling */
+    .card-section {
+      background-color: #fff;
+      margin: 30px auto;
+      padding: 20px 30px;
       max-width: 1200px;
-      background: rgba(255, 255, 255, 0.9);
       border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    .content-section h2 {
-      color: #ffd700; /* Gold */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    .card-section h2 {
+      color: #0a4275;
       margin-top: 0;
     }
-    .content-section ul {
-      margin-left: 20px;
-    }
-    .content-section img {
+    .card-section img {
       display: block;
-      margin: 20px auto;
       max-width: 100%;
+      height: auto;
+      margin: 20px auto;
       border-radius: 8px;
     }
-    /* For the hero background */
-    .hero-background {
-      text-align: center;
-      padding: 100px 20px;
-      background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') 
-                  no-repeat center center/cover;
-      position: relative;
-      color: #fff;
+    .card-section ul {
+      margin-left: 20px;
     }
-    .hero-background div {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 10px;
-      display: inline-block;
-      animation: fadeInDown 1s ease-out;
+    .card-section h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0a4275;
+      color: #fff;
     }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header>
-    <h1 class="hero">My Journey - Rishi Pandey</h1>
+    <h1>My Journey - Rishi Pandey</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -83,20 +95,11 @@
     </nav>
   </header>
 
-  <!-- Hero Background Section -->
-  <section class="hero-background">
-    <div>
-      <h2 style="margin: 0; font-size: 2.5em;">Unfolding the Data Odyssey</h2>
-      <p style="font-size: 1.3em; margin-top: 10px;">
-        A deeper look into my professional and academic milestones.
-      </p>
-    </div>
-  </section>
-
   <!-- Professional Experience -->
-  <section class="content-section">
+  <section class="card-section">
     <h2>Professional Experience</h2>
-    <img src="https://www.dataversity.net/wp-content/uploads/2018/03/data-analytics.jpg" alt="Data Analytics">
+    <img src="https://www.dataversity.net/wp-content/uploads/2018/03/data-analytics.jpg" 
+         alt="Data Analytics">
 
     <h3>Consultant (Assistant Manager) - Deloitte (Jun 2022 – Apr 2024)</h3>
     <ul>
@@ -119,9 +122,10 @@
   </section>
 
   <!-- Academic Record -->
-  <section class="content-section">
+  <section class="card-section">
     <h2>Academic Record</h2>
-    <img src="https://miro.medium.com/max/1400/1*2UuVJJif69I1TETKawXnPA.png" alt="Education">
+    <img src="https://miro.medium.com/max/1400/1*2UuVJJif69I1TETKawXnPA.png" 
+         alt="Education">
 
     <ul>
       <li>PGDM - Big Data Analytics, Goa Institute of Management (Pursuing 2024-2026)</li>
@@ -132,9 +136,10 @@
   </section>
 
   <!-- Projects -->
-  <section class="content-section">
+  <section class="card-section">
     <h2>Projects</h2>
-    <img src="https://cdn-images-1.medium.com/max/800/1*Piwv67NBrzk4WBLoWhrBtw.png" alt="Projects">
+    <img src="https://cdn-images-1.medium.com/max/800/1*Piwv67NBrzk4WBLoWhrBtw.png" 
+         alt="Projects">
 
     <ul>
       <li><b>Credit Risk Model:</b> Built ML models to predict loan eligibility with 86% accuracy.</li>
@@ -144,9 +149,10 @@
   </section>
 
   <!-- Certifications & Achievements -->
-  <section class="content-section">
+  <section class="card-section">
     <h2>Certifications & Achievements</h2>
-    <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Top_Data_Analytics_Certifications.jpg" alt="Certifications">
+    <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Top_Data_Analytics_Certifications.jpg" 
+         alt="Certifications">
 
     <ul>
       <li>Published Research Papers in IJSRET & IC3S on ML & Computer Vision (2020 - 2022).</li>
@@ -158,7 +164,7 @@
   </section>
 
   <!-- Core Competencies -->
-  <section class="content-section">
+  <section class="card-section">
     <h2>Core Competencies</h2>
     <ul>
       <li>Tools: Tableau, Power BI, Azure, Colab, TensorFlow, Keras, Scikit-Learn, PySpark, SQL, etc.</li>
@@ -167,7 +173,7 @@
   </section>
 
   <!-- Contact -->
-  <section class="content-section">
+  <section class="card-section">
     <h2>Contact</h2>
     <ul>
       <li>Email: rishi.pandey24b@gim.ac.in</li>
@@ -176,7 +182,7 @@
   </section>
 
   <!-- Footer -->
-  <footer style="text-align: center; padding: 20px; background: rgba(0,0,0,0.8); color: #fff;">
+  <footer>
     <p>&copy; 2025 Rishi Pandey. All rights reserved.</p>
   </footer>
 </body>
