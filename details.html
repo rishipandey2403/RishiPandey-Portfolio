@@ -1,85 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Journey - Rishi Pandey</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <title>My Journey - Rishi Pandey</title>
+  <link rel="stylesheet" href="Styling.css" />
+  <!-- Optional Inline Styles for Additional Customization -->
+  <style>
+    /* Similar animations as index.html */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .hero {
+      animation: fadeInDown 1s ease-out;
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .content-section {
+      animation: slideIn 1s ease-out;
+      margin: 40px auto;
+      padding: 40px;
+      max-width: 1200px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+    }
+    .content-section h2 {
+      color: #ffd700; /* Gold */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+      margin-top: 0;
+    }
+    .content-section ul {
+      margin-left: 20px;
+    }
+    .content-section img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    /* For the hero background */
+    .hero-background {
+      text-align: center;
+      padding: 100px 20px;
+      background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') 
+                  no-repeat center center/cover;
+      position: relative;
+      color: #fff;
+    }
+    .hero-background div {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 10px;
+      display: inline-block;
+      animation: fadeInDown 1s ease-out;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>My Journey - Rishi Pandey</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <h1 class="hero">My Journey - Rishi Pandey</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section>
-        <h2>Professional Experience</h2>
-        <img src="https://www.dataversity.net/wp-content/uploads/2018/03/data-analytics.jpg" alt="Data Analytics" width="600">
+  <!-- Hero Background Section -->
+  <section class="hero-background">
+    <div>
+      <h2 style="margin: 0; font-size: 2.5em;">Unfolding the Data Odyssey</h2>
+      <p style="font-size: 1.3em; margin-top: 10px;">
+        A deeper look into my professional and academic milestones.
+      </p>
+    </div>
+  </section>
 
-        <h3>Consultant (Assistant Manager) - Deloitte (Jun 2022 – Apr 2024)</h3>
-        <ul>
-            <li>Spearheaded Unilever UK data management and Azure solutions, boosting operational efficiency by 60% and enhancing product performance by 40%.</li>
-            <li>Engineered data-driven solutions using Azure services employing 120+ KPIs, increasing decision accuracy by 25%.</li>
-            <li>Orchestrated advanced dashboards using Power BI, achieving 80% production accuracy.</li>
-            <li>Led a team of 4 Analysts, improving cloud engineering efficiency by 35% and reducing costs by 42%.</li>
-            <li>Utilized Python, Data-Bricks, JIRA, and Azure tech stack to enhance models achieving 85% accuracy.</li>
-            <li>Streamlined ETL workflows using Azure Data Factory and PySpark, achieving a 35% decline in process time.</li>
-            <li>Supported 6 multilingual clients, achieving a 56% increase in client satisfaction.</li>
-            <li>Awarded Fast Track Promotion to Consultant (Assistant Manager) for contributing to 7 major project milestones.</li>
-        </ul>
+  <!-- Professional Experience -->
+  <section class="content-section">
+    <h2>Professional Experience</h2>
+    <img src="https://www.dataversity.net/wp-content/uploads/2018/03/data-analytics.jpg" alt="Data Analytics">
 
-        <h3>Software Engineer - LTI MindTree (Jun 2021 – Jun 2022)</h3>
-        <ul>
-            <li>Hired as a campus recruit in BFSI vertical (Insurance Development Sector).</li>
-            <li>Enhanced coding efficiency using .Net Core solutions built with Python, boosting client satisfaction by 90%.</li>
-            <li>Increased backend app delivery speed, reducing turnaround time by 30%.</li>
-        </ul>
+    <h3>Consultant (Assistant Manager) - Deloitte (Jun 2022 – Apr 2024)</h3>
+    <ul>
+      <li>Spearheaded Unilever UK data management and Azure solutions, boosting operational efficiency by 60% and enhancing product performance by 40%.</li>
+      <li>Engineered data-driven solutions using Azure services employing 120+ KPIs, increasing decision accuracy by 25%.</li>
+      <li>Orchestrated advanced dashboards using Power BI, achieving 80% production accuracy.</li>
+      <li>Led a team of 4 Analysts, improving cloud engineering efficiency by 35% and reducing costs by 42%.</li>
+      <li>Utilized Python, Data-Bricks, JIRA, and Azure tech stack to enhance models achieving 85% accuracy.</li>
+      <li>Streamlined ETL workflows using Azure Data Factory and PySpark, achieving a 35% decline in process time.</li>
+      <li>Supported 6 multilingual clients, achieving a 56% increase in client satisfaction.</li>
+      <li>Awarded Fast Track Promotion to Consultant (Assistant Manager) for contributing to 7 major project milestones.</li>
+    </ul>
 
-        <h2>Academic Record</h2>
-        <img src="https://miro.medium.com/max/1400/1*2UuVJJif69I1TETKawXnPA.png" alt="Education" width="600">
+    <h3>Software Engineer - LTI MindTree (Jun 2021 – Jun 2022)</h3>
+    <ul>
+      <li>Hired as a campus recruit in BFSI vertical (Insurance Development Sector).</li>
+      <li>Enhanced coding efficiency using .Net Core solutions built with Python, boosting client satisfaction by 90%.</li>
+      <li>Increased backend app delivery speed, reducing turnaround time by 30%.</li>
+    </ul>
+  </section>
 
-        <ul>
-            <li>PGDM - Big Data Analytics, Goa Institute of Management (Pursuing 2024-2026)</li>
-            <li>Bachelors in Technology (ECE), KIIT (8.58 / 10) - 2017-2021</li>
-            <li>Intermediate (10+2), Little Flower School (93%) - 2015-2017</li>
-            <li>10th, Little Flower School (95%) - 2015</li>
-        </ul>
+  <!-- Academic Record -->
+  <section class="content-section">
+    <h2>Academic Record</h2>
+    <img src="https://miro.medium.com/max/1400/1*2UuVJJif69I1TETKawXnPA.png" alt="Education">
 
-        <h2>Projects</h2>
-        <img src="https://cdn-images-1.medium.com/max/800/1*Piwv67NBrzk4WBLoWhrBtw.png" alt="Projects" width="600">
+    <ul>
+      <li>PGDM - Big Data Analytics, Goa Institute of Management (Pursuing 2024-2026)</li>
+      <li>Bachelors in Technology (ECE), KIIT (8.58 / 10) - 2017-2021</li>
+      <li>Intermediate (10+2), Little Flower School (93%) - 2015-2017</li>
+      <li>10th, Little Flower School (95%) - 2015</li>
+    </ul>
+  </section>
 
-        <ul>
-            <li><b>Credit Risk Model:</b> Built ML models to predict loan eligibility with 86% accuracy.</li>
-            <li><b>Knee MRI Classification:</b> Developed DL algorithm achieving 83% accuracy. Published in IJSRET & IC3S conferences.</li>
-            <li><b>Power BI Dashboards:</b> Created dashboards for Finance, Healthcare, FMCG enhancing efficiency by 30%.</li>
-        </ul>
+  <!-- Projects -->
+  <section class="content-section">
+    <h2>Projects</h2>
+    <img src="https://cdn-images-1.medium.com/max/800/1*Piwv67NBrzk4WBLoWhrBtw.png" alt="Projects">
 
-        <h2>Certifications & Achievements</h2>
-        <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Top_Data_Analytics_Certifications.jpg" alt="Certifications" width="600">
+    <ul>
+      <li><b>Credit Risk Model:</b> Built ML models to predict loan eligibility with 86% accuracy.</li>
+      <li><b>Knee MRI Classification:</b> Developed DL algorithm achieving 83% accuracy. Published in IJSRET & IC3S conferences.</li>
+      <li><b>Power BI Dashboards:</b> Created dashboards for Finance, Healthcare, FMCG enhancing efficiency by 30%.</li>
+    </ul>
+  </section>
 
-        <ul>
-            <li>Published Research Papers in IJSRET & IC3S on ML & Computer Vision (2020 - 2022).</li>
-            <li>Tata Motors Golden Jubilee Scholarship (2015 – 2021).</li>
-            <li>Certifications in SQL, CNN, Deep Learning, Google Advanced Data Analytics, SAP, AWS, etc. (2019 - 2024).</li>
-            <li>Financial Modelling & Valuation, Algorithmic Trading (2023 - 2024).</li>
-            <li>OCAJP - Oracle Certified Associate Java Programmer (2019).</li>
-        </ul>
+  <!-- Certifications & Achievements -->
+  <section class="content-section">
+    <h2>Certifications & Achievements</h2>
+    <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Top_Data_Analytics_Certifications.jpg" alt="Certifications">
 
-        <h2>Core Competencies</h2>
-        <ul>
-            <li>Tools: Tableau, Power BI, Azure, Colab, TensorFlow, Keras, Scikit-Learn, PySpark, SQL, etc.</li>
-            <li>Programming Languages: Python, PySpark, SQL, C, JAVA, R, C++.</li>
-        </ul>
+    <ul>
+      <li>Published Research Papers in IJSRET & IC3S on ML & Computer Vision (2020 - 2022).</li>
+      <li>Tata Motors Golden Jubilee Scholarship (2015 – 2021).</li>
+      <li>Certifications in SQL, CNN, Deep Learning, Google Advanced Data Analytics, SAP, AWS, etc. (2019 - 2024).</li>
+      <li>Financial Modelling & Valuation, Algorithmic Trading (2023 - 2024).</li>
+      <li>OCAJP - Oracle Certified Associate Java Programmer (2019).</li>
+    </ul>
+  </section>
 
-        <h2>Contact</h2>
-        <ul>
-            <li>Email: rishi.pandey24b@gim.ac.in</li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/rishi-pandey-48a306169">Rishi Pandey</a></li>
-        </ul>
-    </section>
+  <!-- Core Competencies -->
+  <section class="content-section">
+    <h2>Core Competencies</h2>
+    <ul>
+      <li>Tools: Tableau, Power BI, Azure, Colab, TensorFlow, Keras, Scikit-Learn, PySpark, SQL, etc.</li>
+      <li>Programming Languages: Python, PySpark, SQL, C, JAVA, R, C++.</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section class="content-section">
+    <h2>Contact</h2>
+    <ul>
+      <li>Email: rishi.pandey24b@gim.ac.in</li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/rishi-pandey-48a306169">Rishi Pandey</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 20px; background: rgba(0,0,0,0.8); color: #fff;">
+    <p>&copy; 2025 Rishi Pandey. All rights reserved.</p>
+  </footer>
 </body>
 </html>
