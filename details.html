@@ -6,17 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Styling.css">
   <style>
-    /* Page Background using your assets/bg.jpg (from other pages) */
+    /* Additional styles specific to the details page */
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
       background: url('assets/bg.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #f1f1f1;
     }
-    /* Overlay for readability */
     .overlay {
-      background-color: rgba(0,0,0,0.75);
+      background-color: rgba(0, 0, 0, 0.75);
       min-height: 100vh;
       padding: 20px;
     }
@@ -35,7 +32,7 @@
       display: flex;
       justify-content: center;
       background-color: #333;
-      margin-top: 0;
+      margin: 0;
     }
     .navbar a {
       color: #f1f1f1;
@@ -47,10 +44,10 @@
       background-color: #575757;
     }
     .section {
+      background: rgba(0, 0, 0, 0.85);
       margin: 20px auto;
       padding: 20px;
       max-width: 1200px;
-      background: rgba(0, 0, 0, 0.85);
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
@@ -59,23 +56,29 @@
       color: #ffd700;
       margin-bottom: 15px;
     }
-    .content {
-      font-size: 1.1em;
-      line-height: 1.6;
-      padding: 15px;
+    .flex-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
     }
-    .content ul {
-      list-style: square;
-      padding-left: 20px;
+    .flex-text {
+      flex: 1;
+      min-width: 300px;
     }
-    .image {
-      display: block;
-      margin: 15px auto;
-      max-width: 90%;
+    .flex-image {
+      flex: 1;
+      min-width: 300px;
+    }
+    .flex-image img {
+      max-width: 100%;
       height: auto;
       border-radius: 8px;
     }
-    /* Button styling */
+    .content ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
     button {
       display: inline-block;
       background-color: #ffd700;
@@ -91,11 +94,18 @@
     button:hover {
       background-color: #e0c400;
     }
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <div class="overlay">
-    <!-- Header & Navigation -->
+    <!-- Header & Navbar -->
     <header>
       <h1>My Journey - Rishi Pandey</h1>
     </header>
@@ -109,63 +119,84 @@
     <!-- Professional Experience Section -->
     <div class="section">
       <h2>Professional Experience</h2>
-      <div class="content">
-        <h3>Consultant (Assistant Manager) - Deloitte (Jun 2022 – Apr 2024)</h3>
-        <ul>
-          <li>Spearheaded Unilever UK data management and Azure solutions, boosting operational efficiency by 60% and product performance by 40%.</li>
-          <li>Engineered data-driven solutions using Azure services, increasing decision accuracy by 25%.</li>
-          <li>Orchestrated advanced reporting dashboards using Power BI, achieving 80% production accuracy.</li>
-          <li>Led a team of 4 Analysts, enhancing cloud engineering efficiency by 35% and reducing functional costs by 42%.</li>
-          <li>Leveraged Python, Data-Bricks, JIRA, and Azure tech stack to optimize models with 85% accuracy.</li>
-          <li>Streamlined ETL workflows using Azure Data Factory and PySpark, reducing process time by 35%.</li>
-          <li>Supported 6 multilingual clients, achieving a 56% increase in client satisfaction.</li>
-          <li>Awarded Fast Track Promotion for directly contributing to 7 major project milestones.</li>
-        </ul>
-        <button onclick="alert('Details available in Projects section');">Learn More</button>
+      <div class="flex-section">
+        <div class="flex-text content">
+          <h3>Consultant (Assistant Manager) - Deloitte (Jun 2022 – Apr 2024)</h3>
+          <ul>
+            <li>Spearheaded data management and Azure solutions for Unilever UK, driving a 60% boost in operational efficiency and a 40% increase in product performance.</li>
+            <li>Engineered advanced, data-driven strategies with over 120 KPIs, increasing decision accuracy by 25%.</li>
+            <li>Orchestrated and optimized Power BI dashboards achieving 80% production accuracy.</li>
+            <li>Led a high-performing team of 4 Analysts, elevating cloud engineering efficiency by 35% and cutting functional costs by 42%.</li>
+            <li>Leveraged Python, Data-Bricks, JIRA, and a robust Azure tech stack to fine-tune models up to 85% accuracy.</li>
+            <li>Streamlined ETL workflows using Azure Data Factory and PySpark, reducing process time by 35%.</li>
+            <li>Enhanced client satisfaction by 56% across 6 multilingual clients.</li>
+            <li>Awarded Fast Track Promotion for pivotal contributions to 7 major project milestones.</li>
+          </ul>
+          <h3>Software Engineer - LTI MindTree (Jun 2021 – Jun 2022)</h3>
+          <ul>
+            <li>Joined as a campus recruit in the BFSI vertical, specializing in Insurance Development.</li>
+            <li>Enhanced coding efficiency via .Net Core solutions built with Python, boosting client satisfaction by 90%.</li>
+            <li>Accelerated backend application delivery, reducing turnaround time by 30%.</li>
+          </ul>
+        </div>
+        <div class="flex-image">
+          <img src="assets/Img_1.jpg" alt="Professional Experience">
+        </div>
       </div>
-      <img src="assets/Img_1.jpg" alt="Professional Experience" class="image">
     </div>
 
     <!-- Academic Record Section -->
     <div class="section">
       <h2>Academic Record</h2>
-      <div class="content">
-        <ul>
-          <li><strong>PGDM - Big Data Analytics</strong>, Goa Institute of Management (Pursuing 2024-2026)</li>
-          <li><strong>B.Tech in Technology (ECE)</strong>, Kalinga Institute of Industrial Technology (8.58/10, 2017-2021)</li>
-          <li><strong>Intermediate (10+2)</strong>, Little Flower School (93%, 2015-2017)</li>
-          <li><strong>10th</strong>, Little Flower School (95%, 2015)</li>
-        </ul>
+      <div class="flex-section">
+        <div class="flex-text content">
+          <ul>
+            <li><strong>PGDM - Big Data Analytics</strong>, Goa Institute of Management (Pursuing 2024-2026)</li>
+            <li><strong>B.Tech (ECE)</strong>, Kalinga Institute of Industrial Technology (8.58/10, 2017-2021)</li>
+            <li><strong>Intermediate (10+2)</strong>, Little Flower School (93%, 2015-2017)</li>
+            <li><strong>10th</strong>, Little Flower School (95%, 2015)</li>
+          </ul>
+        </div>
+        <div class="flex-image">
+          <img src="assets/Img_2.jpg" alt="Academic Record">
+        </div>
       </div>
-      <img src="assets/Img_2.jpg" alt="Academic Record" class="image">
     </div>
 
     <!-- Projects Section -->
     <div class="section">
       <h2>Projects</h2>
-      <div class="content">
-        <ul>
-          <li><strong>Credit Risk Model:</strong> Constructed ML models predicting loan eligibility with an 86% closure rate accuracy.</li>
-          <li><strong>Knee MRI Classification:</strong> Developed a deep learning algorithm to classify knee MRI scans with 83% accuracy, published in IJSRET & IC3S conferences.</li>
-          <li><strong>Power BI Dashboards:</strong> Curated interactive dashboards for Finance, Healthcare, and FMCG, enhancing analytical efficiency by 30%.</li>
-        </ul>
+      <div class="flex-section">
+        <div class="flex-text content">
+          <ul>
+            <li><strong>Credit Risk Model:</strong> Developed ML models to predict loan eligibility with an 86% closure rate accuracy.</li>
+            <li><strong>Knee MRI Classification:</strong> Crafted a deep learning algorithm for classifying knee MRI scans with 83% accuracy, published in IJSRET & IC3S conferences.</li>
+            <li><strong>Power BI Dashboards:</strong> Curated interactive dashboards for Finance, Healthcare, and FMCG, enhancing analytical efficiency by 30%.</li>
+          </ul>
+        </div>
+        <div class="flex-image">
+          <img src="assets/Img_3.jpg" alt="Projects">
+        </div>
       </div>
-      <img src="assets/Img_3.jpg" alt="Projects" class="image">
     </div>
 
     <!-- Certifications & Achievements Section -->
     <div class="section">
       <h2>Certifications & Achievements</h2>
-      <div class="content">
-        <ul>
-          <li>Published Research Papers in IJSRET & IC3S on Machine Learning and Computer Vision (2020-2022).</li>
-          <li>Tata Motors Golden Jubilee Scholarship for merit (2015-2021).</li>
-          <li>Certifications in SQL, CNN, Deep Learning, Google Advanced Data Analytics, SAP, AWS (2019-2024).</li>
-          <li>Financial Modelling & Valuation, Algorithmic Trading (2023-2024).</li>
-          <li>OCAJP - Oracle Certified Associate Java Programmer (2019).</li>
-        </ul>
+      <div class="flex-section">
+        <div class="flex-text content">
+          <ul>
+            <li>Published Research Papers in IJSRET & IC3S on Machine Learning and Computer Vision (2020-2022).</li>
+            <li>Tata Motors Golden Jubilee Scholarship for academic excellence (2015-2021).</li>
+            <li>Certifications in SQL, CNN, Deep Learning, Google Advanced Data Analytics, SAP, AWS (2019-2024).</li>
+            <li>Financial Modelling & Valuation, Algorithmic Trading (2023-2024).</li>
+            <li>OCAJP - Oracle Certified Associate Java Programmer (2019).</li>
+          </ul>
+        </div>
+        <div class="flex-image">
+          <img src="assets/Img_4.jpg" alt="Certifications & Achievements">
+        </div>
       </div>
-      <img src="assets/Img_4.jpg" alt="Certifications & Achievements" class="image">
     </div>
 
     <!-- Core Competencies Section -->
@@ -174,7 +205,7 @@
       <div class="content">
         <ul>
           <li><strong>Software Packages/Tools:</strong> Tableau, Power BI, Azure, Colab, TensorFlow, Keras, Scikit-Learn, ML Ops, Matplotlib, Seaborn.</li>
-          <li><strong>Programming:</strong> Python, PySpark, SQL, C, JAVA, R, C++.</li>
+          <li><strong>Programming Languages:</strong> Python, PySpark, SQL, C, JAVA, R, C++.</li>
         </ul>
       </div>
     </div>
@@ -184,7 +215,7 @@
       <h2>Extra-Curricular Activities</h2>
       <div class="content">
         <ul>
-          <li>Delegate in DISEC committee representing Russia in the KIIT International Model United Nations (2020).</li>
+          <li>Delegate in DISEC representing Russia in KIIT International Model United Nations (2020).</li>
           <li>Bronze Medalist in Regional/State Level Swimming Championships (2014, 2015).</li>
           <li>Active Volunteer with Rotary Club International & Fund Raiser for Hemophilia Federation of India (2012-Present).</li>
           <li>Senior Diploma in Spanish Guitar and Diploma in Art (2010-2014).</li>
