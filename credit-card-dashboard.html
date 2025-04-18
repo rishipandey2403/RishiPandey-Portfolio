@@ -4,7 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Credit Card Dashboard | Rishi Pandey</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="Styling.css">
+  <style>
+    /* Hero section animation */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .hero {
+      animation: fadeInDown 1s ease-out;
+    }
+    /* Story block animation */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .story {
+      animation: slideIn 1s ease-out;
+    }
+    /* Emphasize headings with a dramatic glow */
+    .dramatic-heading {
+      color: #ffd700; /* Gold */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('assets/bg.jpg') no-repeat center center/cover;
+      background-size: cover;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #ffd700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    }
+    .btn {
+      background-color: #ffd700;
+      color: #000;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+    }
+    .btn:hover {
+      background-color: #e6c300;
+    }
+    .project-description {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      margin: 20px auto;
+      max-width: 900px;
+      border-radius: 10px;
+    }
+    .project-description h2, .project-description h3 {
+      color: #ffd700;
+    }
+    .project-description p, .project-description ul {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -16,7 +100,7 @@
     <img src="assets/virtual-credit-card.jpg" alt="Credit Card Dashboard" style="width: 100%; max-width: 800px; border-radius: 10px;" />
 
     <section class="project-description">
-      <h2>🎭 Storyline: Cracking the Credit Card Code</h2>
+      <h2 class="dramatic-heading">🎭 Storyline: Cracking the Credit Card Code</h2>
       <p>
         In the buzzing world of financial transactions, an unexplained drop in card usage jolted the leadership of a top bank. Transactions were up in some states, down in others, and credit limits seemed mysteriously stagnant. This wasn't just a data dip — it was a *plot twist*. Enter our Data Detective: armed with Power BI and a mountain of credit card data.
       </p>
@@ -35,13 +119,13 @@
         What started as a messy dataset turned into a crystal-clear visual story. With this dashboard, leadership was able to make informed decisions, personalize campaigns, and forecast user behavior with confidence.
       </p>
 
-      <h3>🔧 Tools Used</h3>
+      <h3 class="dramatic-heading">🔧 Tools Used</h3>
       <p>Power BI · Data Modeling · DAX · Slicers & Filters · UX Design</p>
 
-      <h3>📁 Download the .pbix File</h3>
+      <h3 class="dramatic-heading">📁 Download the .pbix File</h3>
       <p><a href="assets/Credit Card Dashboard.pbix" download class="btn">Download Dashboard</a></p>
 
-      <h3>📈 View the Live Power BI Dashboard</h3>
+      <h3 class="dramatic-heading">📈 View the Live Power BI Dashboard</h3>
       <iframe title="Credit_Card_DB" width="100%" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiMmMxZjUyNjItNjRiMy00MjUzLWIwNzEtNGQyZjYzMDkyYzk2IiwidCI6IjFmNDM2ODQxLWZkMzEtNGFhYy1iNDkyLTlkMWI2OTJjMTU3YiIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
     </section>
   </main>
