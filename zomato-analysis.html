@@ -3,12 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zomato SQL Analysis</title>
+  <title>Zomato Analysis - SQL Project</title>
   <link rel="stylesheet" href="Styling.css" />
+  <style>
+    body {
+      background-image: url('https://img.freepik.com/free-vector/blue-technology-background_23-2148119765.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ul li a.active {
+      color: #00bfff;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .project-img {
+      display: block;
+      margin: 20px auto;
+      max-width: 90%;
+      border-radius: 8px;
+    }
+
+    ul {
+      font-size: 17px;
+    }
+
+    .github-btn {
+      background-color: #28a745;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      margin-top: 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .github-btn:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Zomato SQL Analysis</h1>
+    <h1>🍽️ Zomato Analysis - SQL Project</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -19,64 +118,26 @@
   </header>
 
   <main>
-    <!-- Hero Banner Image -->
-    <section class="project-banner">
-      <img src="assets/zomato-sql-banner.png" alt="Zomato SQL Project" style="width: 100%; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
-    </section>
+    <h2>Project 8: Zomato Analysis</h2>
+    <p><strong>Technology:</strong> SQL, PostgreSQL, Relational Schema Design, Analytical Querying</p>
 
-    <!-- Project Overview -->
-    <section class="project-description" style="margin-top: 40px;">
-      <h2>🍽️ Unveiling Business Truths Behind Food Delivery</h2>
-      <p>
-        In this advanced SQL project, I take on the role of a data analyst at <strong>Eternal</strong> — a fictional competitor to Zomato in India’s ultra-competitive food delivery space.
-        Using real-world-like datasets and powerful SQL querying in PostgreSQL (via pgAdmin 4), this project is not just about writing queries — it’s about <strong>telling a story</strong> with data.
-      </p>
-      <p>
-        From ingestion to insights, I architected an entire data workflow: designing schemas, importing raw tables, cleansing messy null values, and writing multi-layered subqueries to answer pressing business questions.
-      </p>
-    </section>
+    <img src="assets/zomato-sql-banner.png" alt="Zomato Analysis Banner" class="project-img" />
 
-    <!-- Technical Stack -->
-    <section class="project-tech">
-      <h3>🛠️ Tech Stack</h3>
-      <ul>
-        <li>PostgreSQL with pgAdmin 4</li>
-        <li>Data modeling & schema creation</li>
-        <li>Complex joins, CTEs, aggregations, CASE WHEN logic</li>
-        <li>GitHub for hosting, versioning, and deployment</li>
-      </ul>
-    </section>
+    <p>
+      The Zomato SQL Analysis project dives into the real-world structure and functioning of an online food delivery platform. 
+      This analysis covers key business performance metrics derived through structured queries in PostgreSQL, covering over 50,000 records.
+    </p>
 
-    <!-- Impact / Business Value -->
-    <section class="project-impact">
-      <h3>🚀 Business Impact</h3>
-      <p>
-        The analysis helped Eternal uncover surprising user trends:
-      </p>
-      <ul>
-        <li>⚡ Identified top customer clusters contributing 80% of the revenue</li>
-        <li>📉 Detected high delivery time zones hurting customer retention</li>
-        <li>🎯 Unlocked product-category combinations with highest order frequency</li>
-      </ul>
-      <p>
-        The learnings from this project mirror real consulting scenarios where insights turn into strategy.
-      </p>
-    </section>
+    <ul>
+      <li>🧭 Extracted top-performing cuisines and customer preferences using complex filters and subqueries.</li>
+      <li>📍 Analyzed city-wise order trends to identify regional demand shifts and delivery bottlenecks.</li>
+      <li>💹 Identified peak time orders and restaurant frequency via aggregate functions and joins.</li>
+      <li>🧮 Delivered actionable KPIs using <code>GROUP BY</code>, <code>JOIN</code>, and <code>CTE</code>-driven SQL logic.</li>
+    </ul>
 
-    <!-- GitHub Link -->
-    <section class="project-link">
-      <h3>🔗 View on GitHub</h3>
-      <p>
-        Dive into the full SQL journey, complete with schema design and queries:
-        <br />
-        <a href="https://github.com/rishipandey2403/Zomato_Analysis" target="_blank">🔍 Zomato Analysis in SQL on GitHub</a>
-      </p>
-    </section>
+    <p>This project reflects strong SQL query-writing ability, business intuition, and real-world dataset handling experience.</p>
 
-    <!-- Back Button -->
-    <div style="text-align: center; margin-top: 40px;">
-      <button onclick="window.location.href='projects.html'" class="btn">← Back to Projects</button>
-    </div>
+    <a href="https://github.com/rishipandey2403/RishiPandey-Portfolio/tree/main/Zomato%20SQL" class="github-btn" target="_blank">🔗 View Project on GitHub</a>
   </main>
 
   <footer>
