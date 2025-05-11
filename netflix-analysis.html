@@ -3,106 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Netflix SQL Analysis - SQL Project</title>
+  <title>Netflix Analysis - SQL Project</title>
+  <link rel="stylesheet" href="Styling.css" />
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-image: url('https://img.freepik.com/free-vector/blue-technology-background_23-2148119765.jpg');
       background-size: cover;
+      background-repeat: no-repeat;
       background-attachment: fixed;
-      background-position: center;
       color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
       text-align: center;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 10px 0;
+    header h1 {
+      margin: 0;
+      font-size: 28px;
     }
 
-    nav a {
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+    }
+
+    nav ul li a.active {
+      color: #00bfff;
       font-weight: bold;
-      font-size: 18px;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 10px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
     }
 
     h2 {
-      font-size: 22px;
-      color: #00ffc3;
-      margin-top: 40px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    ul {
-      list-style-type: '📌 ';
-      padding-left: 0;
-      text-align: left;
-      margin: 0 auto;
-      max-width: 800px;
-      font-size: 18px;
-    }
-
-    li {
+      font-size: 24px;
       margin-bottom: 10px;
     }
 
-    img, video {
-      max-width: 90%;
-      height: auto;
-      margin: 20px auto;
-      border-radius: 10px;
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .project-img {
       display: block;
+      margin: 20px auto;
+      max-width: 90%;
+      border-radius: 8px;
     }
 
-    .github-button {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 18px;
+    ul {
+      font-size: 17px;
+    }
+
+    .github-btn {
       background-color: #28a745;
+      border: none;
       color: white;
-      text-decoration: none;
-      border-radius: 6px;
+      padding: 12px 24px;
       margin-top: 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
     }
 
-    .github-button:hover {
+    .github-btn:hover {
       background-color: #218838;
     }
 
     footer {
-      margin-top: 40px;
-      font-size: 14px;
+      text-align: center;
+      padding: 15px;
       color: #ccc;
+      font-size: 14px;
+      margin-top: 50px;
     }
   </style>
 </head>
+<body>
+  <header>
+    <h1> Netflix Analysis - SQL Project</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 <body>
 
   <nav>
@@ -112,7 +125,7 @@
   </nav>
 
   <div class="container">
-    <h1>🎬 Project 8: Netflix SQL Analysis</h1>
+    <h1>🎬 Project 9: Netflix SQL Analysis</h1>
     <h2>Technology: SQL, Relational Database Concepts, Analytical Querying</h2>
 
     <img src="nz1.png" alt="Netflix Data Preview" />
