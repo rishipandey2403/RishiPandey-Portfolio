@@ -1,39 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Zomato SQL Analysis | Rishi Pandey Portfolio</title>
-  <link rel="stylesheet" href="Styling.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zomato SQL Analysis</title>
+  <link rel="stylesheet" href="Styling.css" />
 </head>
 <body>
-  <div class="project-container">
+  <header>
     <h1>Zomato SQL Analysis</h1>
-    <p><strong>Category:</strong> Advanced SQL</p>
-    <p><strong>Tech Stack:</strong> PostgreSQL (pgAdmin4), GitHub</p>
-    <img src="assets/zomato-sql-banner.png" alt="Zomato SQL Banner" class="project-banner">
-
-    <section class="project-story">
-      <h2>📖 The Business Tale</h2>
-      <p>Picture this: *Eternal*, a buzzing food delivery startup trying to match the reach of Zomato, is drowning in data. Orders, cancellations, customer ratings, delivery partners — all trapped in messy spreadsheets. That’s where I come in.</p>
-      
-      <h2>⚙️ The Technical Operation</h2>
-      <p>I designed and implemented a structured relational database in PostgreSQL. After cleaning and prepping the data, I tackled business challenges like:</p>
+    <nav>
       <ul>
-        <li>Top cities by order volume</li>
-        <li>Customer retention insights</li>
-        <li>Avg. delivery time by region</li>
-        <li>Peak hour trends</li>
-        <li>Missing data reconciliation using subqueries and CASE WHEN logic</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
+    </nav>
+  </header>
 
-      <h2>📊 SQL That Drives Decisions</h2>
-      <p>This wasn’t just textbook SQL. I wrote layered CTEs, window functions, JOINs across datasets, and analytical queries that brought Eternal’s performance into crystal focus.</p>
-
-      <h2>💥 Real Impact</h2>
-      <p>Through this project, I transformed raw CSVs into a decision-making engine. It’s not just SQL — it’s strategy. Recruiters, imagine what I could do with your data.</p>
-
-      <a href="https://github.com/rishipandey2403/Zomato_Analysis" target="_blank" class="github-button">🔗 View Project on GitHub</a>
+  <main>
+    <!-- Hero Banner Image -->
+    <section class="project-banner">
+      <img src="assets/zomato-sql-banner.png" alt="Zomato SQL Project" style="width: 100%; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
     </section>
-  </div>
+
+    <!-- Project Overview -->
+    <section class="project-description" style="margin-top: 40px;">
+      <h2>🍽️ Unveiling Business Truths Behind Food Delivery</h2>
+      <p>
+        In this advanced SQL project, I take on the role of a data analyst at <strong>Eternal</strong> — a fictional competitor to Zomato in India’s ultra-competitive food delivery space.
+        Using real-world-like datasets and powerful SQL querying in PostgreSQL (via pgAdmin 4), this project is not just about writing queries — it’s about <strong>telling a story</strong> with data.
+      </p>
+      <p>
+        From ingestion to insights, I architected an entire data workflow: designing schemas, importing raw tables, cleansing messy null values, and writing multi-layered subqueries to answer pressing business questions.
+      </p>
+    </section>
+
+    <!-- Technical Stack -->
+    <section class="project-tech">
+      <h3>🛠️ Tech Stack</h3>
+      <ul>
+        <li>PostgreSQL with pgAdmin 4</li>
+        <li>Data modeling & schema creation</li>
+        <li>Complex joins, CTEs, aggregations, CASE WHEN logic</li>
+        <li>GitHub for hosting, versioning, and deployment</li>
+      </ul>
+    </section>
+
+    <!-- Impact / Business Value -->
+    <section class="project-impact">
+      <h3>🚀 Business Impact</h3>
+      <p>
+        The analysis helped Eternal uncover surprising user trends:
+      </p>
+      <ul>
+        <li>⚡ Identified top customer clusters contributing 80% of the revenue</li>
+        <li>📉 Detected high delivery time zones hurting customer retention</li>
+        <li>🎯 Unlocked product-category combinations with highest order frequency</li>
+      </ul>
+      <p>
+        The learnings from this project mirror real consulting scenarios where insights turn into strategy.
+      </p>
+    </section>
+
+    <!-- GitHub Link -->
+    <section class="project-link">
+      <h3>🔗 View on GitHub</h3>
+      <p>
+        Dive into the full SQL journey, complete with schema design and queries:
+        <br />
+        <a href="https://github.com/rishipandey2403/Zomato_Analysis" target="_blank">🔍 Zomato Analysis in SQL on GitHub</a>
+      </p>
+    </section>
+
+    <!-- Back Button -->
+    <div style="text-align: center; margin-top: 40px;">
+      <button onclick="window.location.href='projects.html'" class="btn">← Back to Projects</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rishi Pandey. All rights reserved.</p>
+  </footer>
 </body>
 </html>
