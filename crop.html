@@ -4,8 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Project 1: Crop Recommendation System</title>
+
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="Styling.css" />
   <style>
+    /* GLOBAL FONT RESET */
+    body, .container, header, header h1, header nav ul li a,
+    .tech-list li, .preview-card h3, .narrative, .btn {
+      font-family: 'Poppins', sans-serif;
+    }
+
     /* HEADER */
     header {
       position: fixed;
@@ -15,13 +25,13 @@
       color: #fff;
       padding: 15px 0;
       text-align: center;
-      font-family: 'Segoe UI', sans-serif;
       z-index: 100;
       box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
     header h1 {
       margin: 0;
       font-size: 1.8rem;
+      font-weight: 600;
       letter-spacing: 1px;
     }
     header nav ul {
@@ -48,11 +58,11 @@
     .container {
       max-width: 900px;
       margin: 140px auto 60px;   /* push below fixed header */
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.85);  /* more transparent */
+      backdrop-filter: blur(6px); /* subtle glass effect */
       border-radius: 12px;
       padding: 40px 30px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-      font-family: 'Segoe UI', sans-serif;
       color: #263238;
     }
 
@@ -63,6 +73,7 @@
       border-bottom: 3px solid #009688;
       padding-bottom: 8px;
       margin-bottom: 24px;
+      font-weight: 600;
     }
 
     /* TECH STACK LIST */
@@ -73,6 +84,7 @@
     .tech-list li {
       margin-bottom: 8px;
       line-height: 1.5;
+      font-size: 1rem;
     }
 
     /* APP PREVIEW CARD */
@@ -88,6 +100,7 @@
       margin: 0 0 12px;
       font-size: 1.4rem;
       color: #00796b;
+      font-weight: 600;
     }
     .preview-card img {
       max-width: 100%;
@@ -119,7 +132,7 @@
       margin: 0 12px;
       border-radius: 6px;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       text-decoration: none;
       transition: background .3s, transform .2s;
@@ -155,11 +168,11 @@
     <!-- Tech Stack & Workflow -->
     <h2>Tech Stack & Data Pipeline</h2>
     <ul class="tech-list">
-      <li><strong>Data Ingestion & Cleaning:</strong> 25,000+ soil & weather observations sourced via CSV, cleaned in Pandas.</li>
-      <li><strong>Feature Engineering:</strong> Nutrient ratios, seasonal humidity trends, and pH-interaction terms.</li>
-      <li><strong>Modeling:</strong> Compared Linear Regression, Random Forest Regressor & Gradient Boosting—selected RF (R²=0.92, MAE=0.15).</li>
-      <li><strong>Validation:</strong> 5-fold cross-validation, grid search hyperparameter tuning & SHAP feature-impact analysis.</li>
-      <li><strong>Deployment (MLOps):</strong> Dockerized pipeline with GitHub Actions CI/CD; hosted on Render.com.</li>
+      <li><strong>Data Ingestion & Cleaning:</strong> 25,000+ soil & weather rows via CSV → Pandas.</li>
+      <li><strong>Feature Engineering:</strong> Nutrient ratios, seasonal humidity trends, pH-interaction terms.</li>
+      <li><strong>Modeling:</strong> RF selected (R²=0.92, MAE=0.15) after benchmarking Linear, GBM.</li>
+      <li><strong>Validation:</strong> 5-fold CV, grid-search, SHAP explainability.</li>
+      <li><strong>Deployment (MLOps):</strong> Docker + GitHub Actions CI/CD → Render.com.</li>
     </ul>
 
     <!-- Preview Card -->
@@ -170,9 +183,9 @@
 
     <!-- Narrative -->
     <div class="narrative">
-      In modern agriculture, **data reigns supreme**. By integrating soil nutrients (N, P, K), climatic variables, and advanced regression models, this system translates raw inputs into **actionable crop recommendations**—empowering farmers to optimize yield and sustainability.  
+      In modern agriculture, <strong>data reigns supreme</strong>. By integrating N, P, K soil metrics and climatic variables into an advanced regression pipeline, this system delivers <strong>actionable crop recommendations</strong> to maximize yield.  
       <br><br>
-      I architected an end-to-end MLOps workflow: from **Jupyter prototyping → PyCharm refactor → Docker containerization → automated deployment** on Render. Real-time predictions now guide planting decisions across varied agro-climates.
+      Architected end-to-end: <em>Jupyter → PyCharm → Docker → CI/CD → Render</em>, enabling real-time, scalable predictions across diverse agro-climates.
     </div>
 
     <!-- Action Buttons -->
