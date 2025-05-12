@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 1: Crop Recommendation System</title>
+  <link rel="stylesheet" href="Styling.css" />
+  <style>
+    body {
+      background: #f0f4f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #005f73;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .container h2 {
+      font-size: 20px;
+      color: #005f73;
+      margin-bottom: 20px;
+    }
+    .project-img {
+      display: block;
+      margin: 20px auto;
+      max-width: 90%;
+      border-radius: 6px;
+    }
+    p, ul {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    .btn-group {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .btn {
+      background-color: #0a9396;
+      border: none;
+      color: #fff;
+      padding: 12px 24px;
+      margin: 0 10px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #007f7f;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #666;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Project 1: Crop Recommendation System</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Tech Stack & Workflow</h2>
+    <ul>
+      <li>Data Inputs: Nitrogen, Phosphorus, Potassium, Temperature (°C), Humidity (%), pH, Rainfall (mm)</li>
+      <li>Algorithms: Advanced regression pipelines in Python (Jupyter & PyCharm)</li>
+      <li>Deployment: MLOps on Render.com</li>
+    </ul>
+
+    <img class="project-img" src="assets/ml_projects/crop_recommender/screenshot1.png" alt="Crop App Preview" />
+
+    <p>
+      Imagine a world where every farmer struggles to decide which seed to sow—rainfall is fickle, soil nutrients vary, and market prices fluctuate.
+      What if we could harness data to guide every planting decision? Enter my Crop Recommendation System:
+      an end-to-end MLOps pipeline that transforms raw soil and weather inputs into actionable crop advice.
+    </p>
+
+    <div class="btn-group">
+      <button class="btn"
+              onclick="window.open('https://github.com/rishipandey2403/Crop_Recommender','_blank')">
+        🛠 View on GitHub
+      </button>
+      <button class="btn"
+              onclick="window.open('https://crop-recommender-3kwc.onrender.com/','_blank')">
+        🚀 Launch App
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Rishi Pandey. All rights reserved.
+  </footer>
+</body>
+</html>
