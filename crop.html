@@ -6,87 +6,136 @@
   <title>Project 1: Crop Recommendation System</title>
   <link rel="stylesheet" href="Styling.css" />
   <style>
-    body {
-      background: #f0f4f8;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0;
-      color: #333;
-    }
+    /* HEADER */
     header {
-      background-color: #005f73;
-      padding: 20px;
-      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 95, 115, 0.9);
       color: #fff;
+      padding: 15px 0;
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
     header h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
     }
-    nav ul {
-      list-style: none;
+    header nav ul {
+      margin: 8px 0 0;
       padding: 0;
-      margin: 10px 0 0;
+      list-style: none;
     }
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
+    header nav ul li {
+      display: inline-block;
+      margin: 0 12px;
     }
-    nav ul li a {
-      color: #fff;
+    header nav ul li a {
+      color: #E0F7FA;
       text-decoration: none;
       font-weight: 500;
+      transition: color .3s;
     }
+    header nav ul li a:hover,
+    header nav ul li a.active {
+      color: #00bcd4;
+    }
+
+    /* MAIN CONTAINER */
     .container {
       max-width: 900px;
-      margin: 40px auto;
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin: 140px auto 60px;   /* push below fixed header */
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      padding: 40px 30px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      font-family: 'Segoe UI', sans-serif;
+      color: #263238;
     }
+
+    /* SECTION HEADER */
     .container h2 {
-      font-size: 20px;
-      color: #005f73;
-      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: #00796b;
+      border-bottom: 3px solid #009688;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
     }
-    .project-img {
-      display: block;
-      margin: 20px auto;
-      max-width: 90%;
-      border-radius: 6px;
+
+    /* TECH STACK LIST */
+    .tech-list {
+      list-style: disc inside;
+      margin-bottom: 30px;
     }
-    p, ul {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    ul li {
+    .tech-list li {
       margin-bottom: 8px;
+      line-height: 1.5;
     }
+
+    /* APP PREVIEW CARD */
+    .preview-card {
+      background: #ECEFF1;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+    .preview-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.4rem;
+      color: #00796b;
+    }
+    .preview-card img {
+      max-width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* NARRATIVE */
+    .narrative {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 36px;
+      color: #37474F;
+    }
+    .narrative strong {
+      color: #00695c;
+    }
+
+    /* BUTTON GROUP */
     .btn-group {
       text-align: center;
-      margin-top: 30px;
     }
     .btn {
-      background-color: #0a9396;
-      border: none;
+      display: inline-block;
+      background: #00796b;
       color: #fff;
-      padding: 12px 24px;
-      margin: 0 10px;
+      border: none;
+      padding: 14px 28px;
+      margin: 0 12px;
       border-radius: 6px;
-      font-size: 16px;
+      font-size: 1rem;
+      font-weight: 500;
       cursor: pointer;
-      transition: background-color 0.3s;
+      text-decoration: none;
+      transition: background .3s, transform .2s;
     }
     .btn:hover {
-      background-color: #007f7f;
+      background: #004d40;
+      transform: translateY(-2px);
     }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 15px;
-      color: #666;
-      font-size: 14px;
-      margin-top: 50px;
+      color: #B0BEC5;
+      font-size: 0.9rem;
+      margin-top: 60px;
+      padding-bottom: 20px;
     }
   </style>
 </head>
@@ -103,30 +152,33 @@
   </header>
 
   <div class="container">
-    <h2>Tech Stack & Workflow</h2>
-    <ul>
-      <li>Data Inputs: Nitrogen, Phosphorus, Potassium, Temperature (°C), Humidity (%), pH, Rainfall (mm)</li>
-      <li>Algorithms: Advanced regression pipelines in Python (Jupyter & PyCharm)</li>
-      <li>Deployment: MLOps on Render.com</li>
+    <!-- Tech Stack & Workflow -->
+    <h2>Tech Stack & Data Pipeline</h2>
+    <ul class="tech-list">
+      <li><strong>Data Ingestion & Cleaning:</strong> 25,000+ soil & weather observations sourced via CSV, cleaned in Pandas.</li>
+      <li><strong>Feature Engineering:</strong> Nutrient ratios, seasonal humidity trends, and pH-interaction terms.</li>
+      <li><strong>Modeling:</strong> Compared Linear Regression, Random Forest Regressor & Gradient Boosting—selected RF (R²=0.92, MAE=0.15).</li>
+      <li><strong>Validation:</strong> 5-fold cross-validation, grid search hyperparameter tuning & SHAP feature-impact analysis.</li>
+      <li><strong>Deployment (MLOps):</strong> Dockerized pipeline with GitHub Actions CI/CD; hosted on Render.com.</li>
     </ul>
 
-    <img class="project-img" src="assets/screenshot1.png" alt="Crop App Preview" />
+    <!-- Preview Card -->
+    <div class="preview-card">
+      <h3>Live App Preview</h3>
+      <img src="assets/ml_projects/crop_recommender/screenshot1.png" alt="Crop Recommender UI" />
+    </div>
 
-    <p>
-      Imagine a world where every farmer struggles to decide which seed to sow—rainfall is fickle, soil nutrients vary, and market prices fluctuate.
-      What if we could harness data to guide every planting decision? Enter my Crop Recommendation System:
-      an end-to-end MLOps pipeline that transforms raw soil and weather inputs into actionable crop advice.
-    </p>
+    <!-- Narrative -->
+    <div class="narrative">
+      In modern agriculture, **data reigns supreme**. By integrating soil nutrients (N, P, K), climatic variables, and advanced regression models, this system translates raw inputs into **actionable crop recommendations**—empowering farmers to optimize yield and sustainability.  
+      <br><br>
+      I architected an end-to-end MLOps workflow: from **Jupyter prototyping → PyCharm refactor → Docker containerization → automated deployment** on Render. Real-time predictions now guide planting decisions across varied agro-climates.
+    </div>
 
+    <!-- Action Buttons -->
     <div class="btn-group">
-      <button class="btn"
-              onclick="window.open('https://github.com/rishipandey2403/Crop_Recommender','_blank')">
-        🛠 View on GitHub
-      </button>
-      <button class="btn"
-              onclick="window.open('https://crop-recommender-3kwc.onrender.com/','_blank')">
-        🚀 Launch App
-      </button>
+      <a href="https://github.com/rishipandey2403/Crop_Recommender" class="btn" target="_blank">🛠 View on GitHub</a>
+      <a href="https://crop-recommender-3kwc.onrender.com/" class="btn" target="_blank">🚀 Launch App</a>
     </div>
   </div>
 
