@@ -3,102 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Project 9: Spotify SQL Analysis</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Spotify SQL Analysis</title>
   <link rel="stylesheet" href="Styling.css" />
-
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body, .container, header, header h1, header nav ul li a,
-    .tech-list li, .preview-card h3, .narrative, .btn {
+    /* Global font */
+    body, header, nav a, h1, h2, p, ul, li, .btn {
       font-family: 'Poppins', sans-serif;
     }
-
-    /* HEADER */
+    /* Header styling */
     header {
-      position: fixed; top:0; width:100%;
-      background: rgba(0,95,115,0.9);
-      color:#fff; padding:15px 0;
-      text-align:center; z-index:100;
-      box-shadow:0 2px 8px rgba(0,0,0,0.5);
+      background: #1DB954;
+      padding: 15px 0;
+      text-align: center;
     }
     header h1 {
-      margin:0; font-size:1.8rem; font-weight:600; letter-spacing:1px;
+      margin: 0;
+      font-size: 2rem;
+      color: #ffffff;
+      font-weight: 600;
     }
-    header nav ul {
-      margin:8px 0 0; padding:0; list-style:none;
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
     }
-    header nav ul li { display:inline-block; margin:0 12px; }
-    header nav ul li a {
-      color:#E0F7FA; text-decoration:none; font-weight:500; transition:color .3s;
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
     }
-    header nav ul li a:hover,
-    header nav ul li a.active { color:#00bcd4; }
-
-    /* CONTAINER */
-    .container {
-      max-width:900px;
-      margin:140px auto 60px;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(6px);
-      border-radius:12px;
-      padding:40px 30px;
-      box-shadow:0 4px 16px rgba(0,0,0,0.3);
-      color:#263238;
+    nav ul li a {
+      color: #f1f1f1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-    .container h2 {
-      font-size:1.6rem; color:#00796b;
-      border-bottom:3px solid #009688;
-      padding-bottom:8px; margin-bottom:24px;
-      font-weight:600;
+    nav ul li a.active,
+    nav ul li a:hover {
+      color: #191414;
     }
-
-    /* TECH LIST */
-    .tech-list { list-style: disc inside; margin-bottom:30px; }
-    .tech-list li { margin-bottom:8px; line-height:1.5; font-size:1rem; }
-
-    /* PREVIEW CARD */
-    .preview-card {
-      background:#ECEFF1; border-radius:8px; padding:20px;
-      text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.2);
-      margin-bottom:30px;
+    /* Main content styling */
+    .project-detail {
+      max-width: 800px;
+      margin: 80px auto 40px;
+      padding: 20px;
+      background: rgba(245, 245, 245, 0.9);
+      border-radius: 8px;
     }
-    .preview-card h3 {
-      margin:0 0 12px; font-size:1.4rem; color:#00796b; font-weight:600;
+    .project-detail h2 {
+      font-size: 1.8rem;
+      color: #191414;
+      margin-bottom: 10px;
+      font-weight: 600;
     }
-    .preview-card img {
-      max-width:100%; border-radius:6px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.2);
+    .project-detail p {
+      font-size: 1rem;
+      color: #333333;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
-
-    /* NARRATIVE */
-    .narrative {
-      font-size:1rem; line-height:1.7; margin-bottom:36px; color:#37474F;
+    .project-detail ul {
+      margin-left: 20px;
     }
-    .narrative strong { color:#00695c; }
-
-    /* BUTTONS */
-    .btn-group { text-align:center; }
+    .project-detail ul li {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    /* Button */
     .btn {
-      display:inline-block; background:#00796b; color:#fff;
-      border:none; padding:14px 28px; margin:0 12px;
-      border-radius:6px; font-size:1rem; font-weight:600;
-      cursor:pointer; text-decoration:none;
-      transition: background .3s, transform .2s;
+      display: inline-block;
+      background: #1DB954;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
     }
-    .btn:hover { background:#004d40; transform:translateY(-2px); }
-
-    /* FOOTER */
+    .btn:hover {
+      background: #17a84b;
+      transform: translateY(-2px);
+    }
+    /* Footer */
     footer {
-      text-align:center; color:#B0BEC5; font-size:0.9rem;
-      margin-top:60px; padding-bottom:20px;
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #666666;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      .project-detail {
+        margin: 100px 10px 20px;
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Project 9: Spotify SQL Analysis</h1>
+    <h1>🎵 Spotify SQL Analysis - SQL Project</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -108,41 +112,41 @@
     </nav>
   </header>
 
-  <div class="container">
-    <h2>Tech Stack & Data Workflow</h2>
-    <ul class="tech-list">
-      <li><strong>Data Source:</strong> Spotify’s public playlists & track metadata ingested into PostgreSQL.</li>
-      <li><strong>Schema Design:</strong> Tables for Users, Tracks, Artists, Genres, Listening Sessions.</li>
-      <li><strong>Key Queries:</strong>  
+  <main>
+    <section class="project-detail">
+      <h2>Project 10: Spotify SQL Analysis</h2>
+      <p><strong>Technology:</strong> SQL, Relational Schema Design, Performance Tuning, Analytical Querying</p>
+
+      <img src="https://raw.githubusercontent.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/main/spotify_logo.jpg" alt="Spotify Logo" style="width: 100%; max-width: 600px; margin: 20px auto; display: block; border-radius: 6px;" />
+
+      <p>
+        From the first beat to the final chord, every stream tells a story—of rising artists, emerging genres, and listener passions across the globe. Enter my <em>Spotify SQL Analysis</em>: a powerhouse backend that transforms millions of play events into recruiter-ready insights.
+      </p>
+
+      <p>
+        I designed and optimized a relational database to capture Users, Tracks, Artists, Genres, and Listening Sessions. Key implementations included:
         <ul>
-          <li>Top artists & genres by play count</li>
-          <li>Seasonal listening trends (monthly roll-ups)</li>
-          <li>User segmentation by activity levels</li>
+          <li>🔗 Normalized 3NF schema for data integrity</li>
+          <li>🚀 Indexed joins on <code>artist_id</code> & <code>genre</code> for sub-50ms query performance</li>
+          <li>📈 Analytical queries to identify top artists, seasonal trends & user segments</li>
+          <li>📊 SQL views powering a demo Power BI dashboard for visual storytelling</li>
         </ul>
-      </li>
-      <li><strong>Performance:</strong> Indexed by artist_id & genre for sub-50ms response on large joins.</li>
-      <li><strong>Visualization:</strong> Power BI dashboard built on SQL views for recruiter demos.</li>
-    </ul>
+      </p>
 
-    <div class="preview-card">
-      <h3>Project Logo</h3>
-      <img src="https://raw.githubusercontent.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/main/spotify_logo.jpg" alt="Spotify Logo" />
-    </div>
+      <img src="assets/spotify_query_animation.gif" alt="SQL Query Animation" style="width: 100%; max-width: 500px; margin: 20px auto; display: block; border-radius: 6px;" />
 
-    <div class="narrative">
-      From the first beat to the final chord, every stream tells a story. In this project, I crafted a robust SQL backend that dissects millions of listening events—uncovering <strong>genre surges</strong>, <strong>artist breakout moments</strong>, and <strong>user engagement cycles</strong>.  
-      <br><br>
-      By architecting a normalized schema and tuning complex joins, I achieved lightning-quick analytics (sub-50ms) even on datasets of 2M+ rows. The result? A Power BI demo that converts raw queries into recruiter-ready insights on listening habits and growth opportunities.
-    </div>
+      <p>
+        This project is not just queries—it’s a strategic toolkit for music platforms to tune into audience behavior and scale growth. Ready to dive into the data?
+      </p>
 
-    <div class="btn-group">
-      <a href="https://github.com/rishipandey2403/Spotify_Analysis" class="btn" target="_blank">🛠 View on GitHub</a>
-      <a href="#" class="btn" style="visibility:hidden;">🚀 Launch App</a>
-    </div>
-  </div>
+      <a href="https://github.com/rishipandey2403/Spotify_Analysis" target="_blank" class="btn" style="margin-top: 20px;">
+        View Project on GitHub
+      </a>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Rishi Pandey. All rights reserved.
+    <p>&copy; 2025 Rishi Pandey. All rights reserved.</p>
   </footer>
 </body>
 </html>
