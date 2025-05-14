@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 3: Car Sales Dashboard</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Styling.css" />
+
+  <style>
+    /* GLOBAL FONT */
+    body, header, nav a, h1, h2, p, ul, li, .btn {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed; top:0; width:100%;
+      background: rgba(0, 95, 115, 0.9);
+      color: #fff; padding: 15px 0;
+      text-align: center; z-index:100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      margin: 0; font-size: 1.8rem; font-weight:600; letter-spacing:1px;
+    }
+    nav ul {
+      list-style: none; padding:0; margin:8px 0 0;
+    }
+    nav ul li { display:inline-block; margin:0 12px; }
+    nav ul li a {
+      color:#E0F7FA; text-decoration:none; font-weight:500;
+      transition: color .3s;
+    }
+    nav ul li a.active,
+    nav ul li a:hover { color:#00bcd4; }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width:900px;
+      margin:140px auto 60px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(6px);
+      border-radius:12px;
+      padding:40px 30px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.3);
+      color:#263238;
+    }
+    .container h2 {
+      font-size:1.6rem; color:#00796b;
+      border-bottom:3px solid #009688;
+      padding-bottom:8px; margin-bottom:24px;
+      font-weight:600;
+    }
+
+    /* TECH LIST */
+    .tech-list { list-style: disc inside; margin-bottom:30px; }
+    .tech-list li {
+      margin-bottom:8px; line-height:1.5; font-size:1rem;
+    }
+
+    /* PREVIEW CARD */
+    .preview-card {
+      background:#ECEFF1; border-radius:8px; padding:20px;
+      text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.2);
+      margin-bottom:30px;
+    }
+    .preview-card h3 {
+      margin:0 0 12px; font-size:1.4rem;
+      color:#00796b; font-weight:600;
+    }
+    .preview-card img {
+      max-width:100%; border-radius:6px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* NARRATIVE */
+    .narrative {
+      font-size:1rem; line-height:1.7;
+      margin-bottom:36px; color:#37474F;
+    }
+    .narrative strong { color:#00695c; }
+
+    /* BUTTON GROUP */
+    .btn-group { text-align:center; }
+    .btn {
+      display:inline-block; background:#00796b; color:#fff;
+      border:none; padding:14px 28px; margin:0 12px;
+      border-radius:6px; font-size:1rem; font-weight:600;
+      cursor:pointer; text-decoration:none;
+      transition: background .3s, transform .2s;
+    }
+    .btn:hover { background:#004d40; transform:translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      text-align:center; color:#B0BEC5; font-size:0.9rem;
+      margin-top:60px; padding-bottom:20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🚗 Car Sales Dashboard - Power BI Project</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Tech Stack & Pipeline -->
+    <h2>Tech Stack & Development Pipeline</h2>
+    <ul class="tech-list">
+      <li><strong>Data Source:</strong> Car sales CSVs loaded into Power BI Dataflows.</li>
+      <li><strong>ETL:</strong> M queries for cleansing, date-table creation, and KPI calculations (YTD, MTD, YOY, PTYD).</li>
+      <li><strong>Visuals:</strong> Line, Pie, Map & Table visuals powered by DAX measures for dynamic analytics.</li>
+      <li><strong>Interactivity:</strong> Slicers for time, body style, colour & region; drill-through for detail grids.</li>
+      <li><strong>Deployment:</strong> Published to Power BI Service with row-level security and scheduled refresh.</li>
+    </ul>
+
+    <!-- Preview Card -->
+    <div class="preview-card">
+      <h3>Dashboard Preview</h3>
+      <img src="assets/Car.jpg" alt="Car Sales Dashboard Screenshot" />
+    </div>
+
+    <!-- Narrative -->
+    <div class="narrative">
+      In a competitive auto market, split-second insights drive sales strategies. This Car Sales Dashboard arms dealers with **real-time KPIs**—from YTD vs PTYD growth to region-wise sales mapping.  
+      <br><br>
+      Users can trace weekly YTD trends, compare average prices, and pinpoint colour or body-style hotspots on an interactive map. Every click triggers a tailored DAX measure, surfacing **data-backed decisions** that accelerate revenue and optimize inventory.
+      <br><br>
+      **Live report:** <a href="https://app.powerbi.com/groups/me/reports/11f9ac6e-746e-4084-b7cb-5efe5594c129/2b0f3d14482b19e0b7ba?experience=power-bi" target="_blank" class="btn" style="margin:10px 0;">🔗 View on Power BI</a>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="btn-group">
+      <a href="https://github.com/rishipandey2403/Car_Sales_Dashboard" class="btn" target="_blank">🛠 View on GitHub</a>
+      <a href="assets/Car2.gif" class="btn" target="_blank">🚀 Demo Animation</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Rishi Pandey. All rights reserved.
+  </footer>
+</body>
+</html>
