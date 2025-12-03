@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPL Analytics Dashboard | Rishi Pandey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sports analytics case study using Power BI on IPL (2008–2025): team performance, Orange/Purple Cap trends, batting metrics, and points table insights.">
+    <link rel="stylesheet" href="Styling.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR (kept generic so it blends with existing theme) ===== -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Rishi Pandey</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <main class="project-page">
+        <section class="hero-section project-hero">
+            <div class="hero-content">
+                <p class="project-tag">Power BI • Sports Analytics • IPL (2008–2025)</p>
+                <h1>IPL Analytics Dashboard<br><span class="accent">Team, Player & Season Insights</span></h1>
+                <p class="hero-subtitle">
+                    A fan-first yet business-grade analytics dashboard on the Indian Premier League, built in Power BI to
+                    answer one simple question: <strong>what really drives success in the IPL across seasons?</strong>
+                </p>
+
+                <div class="hero-cta-group">
+                    <a class="btn primary-btn" 
+                       href="https://app.powerbi.com/groups/me/reports/d9483ca2-b3cf-470b-9f50-d86006ead228/4c09a5bc8ea0cf6d72d8?experience=power-bi"
+                       target="_blank" rel="noopener noreferrer">
+                        🔗 View Live Power BI Dashboard
+                    </a>
+                    <a class="btn secondary-btn" href="projects.html">
+                        ← Back to Projects
+                    </a>
+                    <a class="btn ghost-btn" href="https://github.com/rishipandey2403/RishiPandey-Portfolio" target="_blank" rel="noopener noreferrer">
+                        GitHub Repository
+                    </a>
+                </div>
+
+                <div class="project-meta-chips">
+                    <span class="chip">Tools: Power BI, DAX</span>
+                    <span class="chip">Domain: Sports Analytics</span>
+                    <span class="chip">Scope: IPL Seasons 2008–2025</span>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <!-- Replace the src with the actual path of your screenshot -->
+                <img src="assets/ipl-dashboard-main.png" alt="IPL Analytics Dashboard in Power BI">
+            </div>
+        </section>
+
+        <!-- ===== STORY / NARRATIVE ===== -->
+        <section class="project-section">
+            <h2>Story: From Cricket Fan to Sports Analyst</h2>
+            <p>
+                I’ve followed the IPL like most of us do – emotionally. But as a data analyst, I wanted to go beyond
+                “CSK vs GT banter” and actually <strong>quantify performance across teams, seasons, and players</strong>.
+                This project is my attempt to bring a structured, analytics-first lens to IPL history using Power BI.
+            </p>
+            <p>
+                The goal was to design a dashboard where a casual fan, a fantasy league player, or even a sports
+                strategist could quickly answer:
+            </p>
+            <ul>
+                <li>Which team has been the most consistent across seasons?</li>
+                <li>How do Orange &amp; Purple Cap winners influence team results?</li>
+                <li>What does a “championship season” look like in numbers?</li>
+            </ul>
+            <p>
+                The result is an <strong>interactive IPL Analytics Dashboard (2008–2025)</strong> that combines
+                team standings, batting &amp; bowling stats, and season-wise trends into a single view.
+            </p>
+        </section>
+
+        <!-- ===== PROBLEM & OBJECTIVES ===== -->
+        <section class="project-section">
+            <div class="two-column">
+                <div>
+                    <h2>Problem Statement</h2>
+                    <p>
+                        With 15+ seasons of IPL data, it’s hard to see patterns just by looking at tables or scorecards.
+                        Every season has new teams, auctions, and player dynamics. Fans and analysts need a way to
+                        <strong>cut through the noise</strong> and understand performance at a macro level:
+                    </p>
+                    <ul>
+                        <li>Which teams dominate the league table and why?</li>
+                        <li>How do batting and bowling awards correlate with team success?</li>
+                        <li>What are the high-scoring seasons and formats of play?</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Project Objectives</h2>
+                    <ul>
+                        <li>Build a <strong>single-page IPL overview</strong> for quick storytelling.</li>
+                        <li>Track <strong>Champions, Runners-up, total 4s/6s, centuries</strong> and matches.</li>
+                        <li>Highlight <strong>Orange Cap &amp; Purple Cap winners</strong> with team context.</li>
+                        <li>Show a <strong>dynamic points table</strong> that updates with season selection.</li>
+                        <li>Design the page so it feels like a broadcast-style sports panel, but powered by data.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DATA & MODEL ===== -->
+        <section class="project-section">
+            <h2>Dataset & Modelling Approach</h2>
+            <p>
+                I used season-wise IPL match and player statistics (batting, bowling and team results) and modelled it in Power BI
+                as a clean semantic layer:
+            </p>
+            <ul>
+                <li><strong>Match-level table</strong> – season, teams, venue, result, total 4s, 6s, centuries, winning margin.</li>
+                <li><strong>Team table</strong> – team names, logos, abbreviations (used in points table visual).</li>
+                <li><strong>Player stats table</strong> – season-wise runs, wickets, 4s and 6s for Orange/Purple Cap logic.</li>
+                <li><strong>Season dimension</strong> – used as the main slicer for toggling 2008–2025 views.</li>
+            </ul>
+            <p>
+                In Power BI, I used relationships on <strong>Season</strong> and <strong>Team</strong>, and created
+                DAX measures for aggregate KPIs (total 4s, total 6s, matches, centuries, points, etc.) so the entire
+                page responds to a single <strong>Season</strong> dropdown.
+            </p>
+        </section>
+
+        <!-- ===== DASHBOARD WALKTHROUGH ===== -->
+        <section class="project-section">
+            <h2>Dashboard Walkthrough</h2>
+
+            <h3>🏆 Title Bar & Season Context</h3>
+            <p>
+                The top band, labelled <strong>“IPL Analysis (2008–2025)”</strong>, sets the context with:
+            </p>
+            <ul>
+                <li><strong>Champions</strong> – e.g., Chennai Super Kings.</li>
+                <li><strong>Runners-up</strong> – e.g., Gujarat Titans.</li>
+                <li><strong>Season selector</strong> – dropdown to switch between seasons.</li>
+            </ul>
+
+            <h3>📌 Core KPIs</h3>
+            <p>Directly under the header I show summary tiles for the selected season:</p>
+            <ul>
+                <li>Total 6s hit across all matches.</li>
+                <li>Total 4s hit.</li>
+                <li>Total matches played.</li>
+                <li>Total teams participating.</li>
+                <li>Number of centuries scored.</li>
+            </ul>
+
+            <h3>👑 Player Spotlight Cards</h3>
+            <p>
+                The middle section focuses on star performers with IPL-style “cap” tiles:
+            </p>
+            <ul>
+                <li><strong>Orange Cap</strong> – player name, total runs, franchise.</li>
+                <li><strong>Purple Cap</strong> – bowler, total wickets, franchise.</li>
+                <li><strong>Top 4s</strong> and <strong>Top 6s</strong> – aggressive batters with boundary count.</li>
+            </ul>
+            <p>
+                These visuals make it easy to see <strong>who carried the batting and bowling load</strong> for each season.
+            </p>
+
+            <h3>📊 Points Table</h3>
+            <p>
+                On the right side, a <strong>points table visual</strong> (matrix/table) tracks:
+            </p>
+            <ul>
+                <li>Team logo and name.</li>
+                <li>Matches played, won, lost, and no-result.</li>
+                <li>Ties and final points.</li>
+            </ul>
+            <p>
+                This reflects the official IPL points structure and allows a quick sense of
+                <strong>who dominated the league stage</strong>.
+            </p>
+        </section>
+
+        <!-- ===== INSIGHTS & TAKEAWAYS ===== -->
+        <section class="project-section">
+            <h2>Key Insights & Patterns</h2>
+            <ul>
+                <li>
+                    <strong>Run-heavy seasons:</strong> Some seasons clearly stand out with significantly higher counts
+                    of total 4s and 6s, hinting at flatter pitches and power-hitting eras.
+                </li>
+                <li>
+                    <strong>Champion consistency:</strong> Teams like Chennai Super Kings frequently appear near the
+                    top of the points table even in seasons they don’t win, underscoring squad depth and strategy.
+                </li>
+                <li>
+                    <strong>Orange/Purple Cap impact:</strong> In many seasons, the team with the Orange or Purple Cap
+                    winner also finishes in the top 2–3 positions, showing how star performance correlates with
+                    overall team success.
+                </li>
+                <li>
+                    <strong>Competitive balance:</strong> The spread of points often shows tightly packed mid-tables,
+                    reflecting a highly competitive league where small margins decide playoff spots.
+                </li>
+            </ul>
+        </section>
+
+        <!-- ===== IMPACT / WHAT THIS SHOWS ABOUT YOU ===== -->
+        <section class="project-section">
+            <h2>What This Project Demonstrates</h2>
+            <p>This IPL dashboard is more than a fan project – it highlights my ability to:</p>
+            <ul>
+                <li>Convert raw sports scorecards into an <strong>analytics-ready data model</strong>.</li>
+                <li>Design <strong>broadcast-style dashboards</strong> that still obey good BI practices.</li>
+                <li>Use <strong>DAX</strong> and relationships to keep everything driven by a single Season selection.</li>
+                <li>Tell a clear <strongdata-story>data story</strong> that is accessible to both fans and business stakeholders.</li>
+            </ul>
+        </section>
+
+        <!-- ===== CTA SECTION ===== -->
+        <section class="project-section project-cta">
+            <h2>Explore the Dashboard Yourself</h2>
+            <p>
+                Use the dropdown to switch seasons, track champions, and see how star players shaped their team’s journey.
+            </p>
+            <div class="hero-cta-group">
+                <a class="btn primary-btn" 
+                   href="https://app.powerbi.com/groups/me/reports/d9483ca2-b3cf-470b-9f50-d86006ead228/4c09a5bc8ea0cf6d72d8?experience=power-bi"
+                   target="_blank" rel="noopener noreferrer">
+                    🔗 Open Live IPL Dashboard
+                </a>
+                <a class="btn secondary-btn" href="projects.html">
+                    ← Back to All Projects
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2025 Rishi Pandey • Data, Analytics & AI</p>
+    </footer>
+
+</body>
+</html>
