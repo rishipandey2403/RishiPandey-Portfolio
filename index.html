@@ -7,31 +7,86 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
         
         body {
             font-family: 'Inter', sans-serif;
             box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+            animation: float-slow 20s ease-in-out infinite;
+        }
+        
+        .gradient-bg::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            bottom: -50px;
+            right: -50px;
+            animation: float-slow 25s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(30px) translateX(30px); }
         }
         
         .card-hover {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+            z-index: 1;
+        }
+        
+        .card-hover:hover::before {
+            left: 100%;
         }
         
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
         }
         
         .skill-bar {
             height: 8px;
             background: linear-gradient(90deg, #667eea, #764ba2);
             border-radius: 4px;
-            transition: width 1s ease-in-out;
+            transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
         
         .typing-animation {
@@ -45,12 +100,12 @@
         }
         
         .floating {
-            animation: float 3s ease-in-out infinite;
+            animation: float 3.5s ease-in-out infinite;
         }
         
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-15px); }
         }
         
         .tech-icon {
@@ -58,20 +113,22 @@
         }
         
         .tech-icon:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(5deg);
             color: #667eea;
+            filter: drop-shadow(0 5px 15px rgba(102, 126, 234, 0.4));
         }
         
         /* Navbar transparent to solid on scroll */
         #navbar {
             background-color: transparent;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            z-index: 1000;
         }
         
         #navbar.scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
         }
         
         #navbar.scrolled .nav-text {
@@ -82,6 +139,7 @@
         #navbar.scrolled .nav-brand {
             color: #1f2937 !important;
             text-shadow: none;
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         #navbar.scrolled .nav-icon {
@@ -92,17 +150,120 @@
             color: white;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-text:hover::after {
+            width: 100%;
+        }
+        
+        #navbar.scrolled .nav-text::after {
+            background: #667eea;
         }
         
         .nav-brand {
             color: white;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         .nav-icon {
             color: white;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        /* Section animations */
+        section {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Stagger animations for elements */
+        .project-grid > div {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .project-grid > div:nth-child(1) { animation-delay: 0.1s; }
+        .project-grid > div:nth-child(2) { animation-delay: 0.2s; }
+        .project-grid > div:nth-child(3) { animation-delay: 0.3s; }
+        .project-grid > div:nth-child(4) { animation-delay: 0.4s; }
+        .project-grid > div:nth-child(5) { animation-delay: 0.2s; }
+        .project-grid > div:nth-child(6) { animation-delay: 0.3s; }
+        .project-grid > div:nth-child(n+7) { animation-delay: 0.4s; }
+        
+        /* Heading animations */
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            animation: slideInDown 0.8s ease forwards;
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Button hover effects */
+        button, a[class*="bg-gradient"] {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        button::before, a[class*="bg-gradient"]::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        button:hover::before, a[class*="bg-gradient"]:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Achievement cards glow */
+        .bg-gradient-to-r {
+            position: relative;
+        }
+        
+        .bg-gradient-to-r:hover {
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
             transition: all 0.3s ease;
         }
     </style>
@@ -459,7 +620,7 @@
      <h2 class="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Bank Loan Dashboard -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 project-grid"><!-- Bank Loan Dashboard -->
      <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
       <div class="bg-gradient-to-br from-blue-500 to-purple-600 h-48 flex items-center justify-center"><i class="fas fa-university text-6xl text-white"></i>
       </div>
@@ -598,6 +759,25 @@
        <p class="text-gray-600 mb-4">Health analytics application for tracking nutrition, calories, and fitness goals with data insights.</p>
        <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Health Tech</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Nutrition</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Wellness</span>
        </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/calorie.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Disease Predictor (ML/MLOps) -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover ring-2 ring-blue-200 relative">
+      <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-bl-lg text-xs font-bold">
+       FEATURED
+      </div>
+      <div class="bg-gradient-to-br from-red-500 via-pink-500 to-purple-600 h-48 flex items-center justify-center relative overflow-hidden">
+       <div class="absolute inset-0 opacity-30">
+        <div class="absolute w-40 h-40 bg-white rounded-full filter blur-3xl top-0 right-0"></div>
+        <div class="absolute w-40 h-40 bg-white rounded-full filter blur-3xl bottom-0 left-0"></div>
+       </div><i class="fas fa-stethoscope text-6xl text-white relative z-10"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Disease Predictor</h3>
+       <p class="text-gray-600 mb-4">Advanced ML-powered healthcare application that predicts diseases using machine learning algorithms with production-grade MLOps infrastructure.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs font-semibold">Machine Learning</span> <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-semibold">MLOps</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-semibold">Healthcare</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">GitHub</span>
+       </div>
+       <div class="flex gap-3"><a href="https://disease-predictor-y4le.onrender.com/" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-gradient-to-r from-red-500 to-pink-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-red-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105">Live App →</a> <a href="https://github.com/rishipandey2403/Disease_Predictor" target="_blank" rel="noopener noreferrer" class="flex-1 text-center border-2 border-gray-800 text-gray-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300">GitHub →</a>
+       </div>
       </div>
      </div>
     </div>
@@ -763,5 +943,5 @@
             animateSkillBars();
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cac1f1d36a1efc3',t:'MTc3MDU2NDEzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cac2fe412ccb5d1',t:'MTc3MDU2NDgyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
