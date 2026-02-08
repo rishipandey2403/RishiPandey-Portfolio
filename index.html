@@ -1,141 +1,723 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rishi Pandey - Data Analytics Portfolio</title>
-  <link rel="stylesheet" href="Styling.css">
-  <!-- Inline styles for animations and extra tweaks on the home page -->
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishi Pandey - Data Scientist &amp; AI Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
-    /* Hero section animation */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .hero {
-      animation: fadeInDown 1s ease-out;
-    }
-    /* Story block animation */
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    .story {
-      animation: slideIn 1s ease-out;
-    }
-    /* Emphasize headings with a dramatic glow */
-    .dramatic-heading {
-      color: #ffd700; /* Gold */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-    }
-    .narrative {
-      font-size: 1.2em;
-      line-height: 1.6;
-      margin: 20px 0;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
-</head>
-<body>
-  <!-- Header Section -->
-  <header>
-    <h1 class="hero">Rishi Pandey</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <!-- Moved About Me Button to Navigation as "My Journey" -->
-        <li><a href="details.html">My Journey</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero Section with Background Image -->
-  <section class="hero" style="text-align:center; padding:100px 20px; background: url('assets/bg.jpg') no-repeat center center/cover; position: relative;">
-    <div style="background: rgba(0,0,0,0.6); padding: 40px; border-radius: 10px; display: inline-block;">
-      <h2 class="dramatic-heading" style="font-size: 2.5em; margin: 0;">Data is the New Gold</h2>
-      <p style="font-size: 1.3em; margin-top: 10px;">
-        Transforming raw data into strategic insights that drive global business decisions.
-      </p>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .typing-animation {
+            border-right: 2px solid #667eea;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: #667eea; }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.1);
+            color: #667eea;
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="bg-gray-50"><!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+     <div class="text-2xl font-bold text-gray-800">
+      Rishi Pandey
+     </div>
+     <div class="hidden md:flex space-x-8"><a href="#home" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a> <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">About</a> <a href="#experience" class="text-gray-600 hover:text-blue-600 transition-colors">Experience</a> <a href="#education" class="text-gray-600 hover:text-blue-600 transition-colors">Education</a> <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors">Skills</a> <a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a> <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+     </div><button class="md:hidden" onclick="toggleMobileMenu()"> <i class="fas fa-bars text-gray-600"></i> </button>
     </div>
-  </section>
-
-  <!-- About / Story Section -->
-  <main>
-    <section class="story card" style="margin: 40px auto; padding: 40px; max-width: 1200px;">
-      <h2 class="dramatic-heading">My Journey as a Data Storyteller</h2>
-      <div class="narrative">
-        <p><strong>Welcome to My Data Universe—Where Numbers Meet Narrative, and Insights Ignite Impact</strong></p>
-        <p>
-          I’m <strong>Rishi Pandey</strong>, a <strong>Data Alchemist</strong>—turning raw data into gold for those who dare to lead with precision. With a PGDM in Big Data Analytics from Goa Institute of Management and real-world expertise forged at Deloitte, I don’t just analyze data—I decode its hidden language, crafting strategic blueprints that redefine industries.
-        </p>
-        <p>
-          At American Express, I didn’t just build reports—I engineered predictive intelligence systems, transforming operational metrics into forward-looking strategies. My work didn’t just track performance—it anticipated market shifts, empowering leadership to act before trends emerged.
-        </p>
-        <p><strong>Here’s what sets me apart:</strong></p>
-        <p>
-          <strong>Insight Architect:</strong> I don’t stop at "what happened"—I uncover why it happened and what comes next.<br>
-          <strong>Decision Catalyst:</strong> My analyses don’t just inform—they compel action, driving revenue, efficiency, and innovation.<br>
-          <strong>Storyteller with SQL:</strong> Data is lifeless without narrative—I weave compelling, boardroom-ready stories from complex datasets.
-        </p>
-        <p>
-          This portfolio isn’t a showcase—it’s a battlefield of solved problems, where every dashboard, model, and algorithm was designed to outthink the competition. The world’s most elite firms don’t just seek analysts—they hunt for visionaries who turn data into dominance.
-        </p>
-        <p><strong>Let’s redefine what’s possible—one insight at a time. 🔥</strong></p>
+   </div><!-- Mobile Menu -->
+   <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+    <div class="px-4 py-2 space-y-2"><a href="#home" class="block py-2 text-gray-600">Home</a> <a href="#about" class="block py-2 text-gray-600">About</a> <a href="#experience" class="block py-2 text-gray-600">Experience</a> <a href="#education" class="block py-2 text-gray-600">Education</a> <a href="#skills" class="block py-2 text-gray-600">Skills</a> <a href="#projects" class="block py-2 text-gray-600">Projects</a> <a href="#contact" class="block py-2 text-gray-600">Contact</a>
+    </div>
+   </div>
+  </nav><!-- Hero Section -->
+  <section id="home" class="min-h-screen gradient-bg flex items-center justify-center text-white">
+   <div class="max-w-4xl mx-auto px-4 text-center">
+    <div class="floating mb-8">
+     <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl"><img src="IMG-20250414-WA0027.jpg" alt="Rishi Pandey - Data Scientist &amp; AI Engineer" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full bg-white/20 backdrop-blur-sm flex items-center justify-center\'><i class=\'fas fa-user text-6xl\'></i></div>';">
+     </div>
+    </div>
+    <h1 class="text-5xl md:text-7xl font-bold mb-6">Rishi Pandey</h1>
+    <div class="text-xl md:text-2xl mb-8 h-8"><span id="typingText" class="typing-animation"></span>
+    </div>
+    <p class="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">Data Scientist &amp; AI Engineer specializing in Machine Learning, Agentic AI, and Data Engineering solutions that drive business impact</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="#contact" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"> Get In Touch </a> <a href="#projects" class="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors"> View My Work </a>
+    </div>
+   </div>
+  </section><!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+   <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
+     <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+     <div>
+      <h3 class="text-2xl font-semibold text-gray-800 mb-6">Passionate Data Scientist &amp; AI Engineer</h3>
+      <p class="text-gray-600 mb-6 leading-relaxed">I'm a results-driven data professional with expertise in machine learning, agentic AI, and data engineering. My recent internship at American Express allowed me to accelerate data migration processes by 52% and build AI-driven automation solutions that reduced manual effort by 35%.</p>
+      <p class="text-gray-600 mb-6 leading-relaxed">I specialize in building end-to-end ML pipelines, developing intelligent agents, and creating data-driven solutions that solve complex business problems. My experience spans from traditional machine learning to cutting-edge agentic AI systems.</p>
+      <div class="flex flex-wrap gap-4"><span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Machine Learning</span> <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Agentic AI</span> <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Data Engineering</span> <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">MLOps</span>
       </div>
-    </section>
-
-    <!-- Analytics Highlights Section -->
-    <section class="story card" style="margin: 40px auto; padding: 40px; max-width: 1200px;">
-      <h2 class="dramatic-heading">What I Bring to the Table</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around;">
-        <div style="flex: 1; min-width: 250px; text-align: center;">
-          <img src="https://cdn-icons-png.flaticon.com/128/8358/8358886.png" alt="Data Mastery" style="width: 80px; height: 80px;">
-          <h3 class="dramatic-heading">Data Mastery</h3>
-          <p>Expert in SQL, Python, Power BI, Tableau, and cutting-edge analytics techniques.</p>
-        </div>
-        <div style="flex: 1; min-width: 250px; text-align: center;">
-          <img src="https://cdn-icons-png.flaticon.com/128/7910/7910934.png" alt="Strategic Insight" style="width: 80px; height: 80px;">
-          <h3 class="dramatic-heading">Strategic Insight</h3>
-          <p>Transforming complex datasets into clear, actionable business intelligence.</p>
-        </div>
-        <div style="flex: 1; min-width: 250px; text-align: center;">
-          <img src="https://cdn-icons-png.flaticon.com/128/18224/18224759.png" alt="Innovative Solutions" style="width: 80px; height: 80px;">
-          <h3 class="dramatic-heading">Innovative Solutions</h3>
-          <p>Driving innovation with advanced analytics to solve real-world business challenges.</p>
-        </div>
+     </div>
+     <div class="grid grid-cols-2 gap-6">
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center"><i class="fas fa-chart-line text-3xl text-blue-600 mb-4"></i>
+       <h4 class="font-semibold text-gray-800 mb-2">Data Analytics</h4>
+       <p class="text-sm text-gray-600">Advanced analytics and visualization</p>
       </div>
-    </section>
-    
-    <!-- Call-to-Action Section -->
-    <section class="story card" style="margin: 40px auto; padding: 40px; text-align: center; max-width: 1200px;">
-      <h2 class="dramatic-heading">Let’s Create the Future Together</h2>
-      <p style="font-size: 1.3em;">
-        Explore my projects, dive into my analyses, and discover how data can revolutionize business strategy. Top firms are looking for talent that can turn data into gold—let's make that happen.
-      </p>
-      <button class="btn" onclick="location.href='projects.html'" style="margin-top: 20px; font-size: 1.2em;">
-        View My Projects
-      </button>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer style="text-align:center; padding:20px; background: rgba(0,0,0,0.8);">
-    <p>&copy; 2025 Rishi Pandey. All rights reserved.</p>
+      <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl text-center"><i class="fas fa-robot text-3xl text-purple-600 mb-4"></i>
+       <h4 class="font-semibold text-gray-800 mb-2">AI Agents</h4>
+       <p class="text-sm text-gray-600">Intelligent automation systems</p>
+      </div>
+      <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl text-center"><i class="fas fa-database text-3xl text-green-600 mb-4"></i>
+       <h4 class="font-semibold text-gray-800 mb-2">Data Engineering</h4>
+       <p class="text-sm text-gray-600">Scalable data pipelines</p>
+      </div>
+      <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl text-center"><i class="fas fa-cogs text-3xl text-orange-600 mb-4"></i>
+       <h4 class="font-semibold text-gray-800 mb-2">MLOps</h4>
+       <p class="text-sm text-gray-600">Production ML systems</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Experience Section -->
+  <section id="experience" class="py-20 bg-gray-50">
+   <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Professional Experience</h2>
+     <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+    </div><!-- American Express Experience -->
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-8 card-hover">
+     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+      <div>
+       <h3 class="text-2xl font-bold text-gray-800 mb-2">Risk Management Analyst</h3>
+       <h4 class="text-xl text-blue-600 font-semibold mb-2">American Express</h4>
+       <p class="text-gray-600">Summer Internship (5 Months) • Apr 2025 – Aug 2025</p>
+      </div>
+      <div class="mt-4 md:mt-0"><span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mr-2">Data Analytics</span> <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Agentic AI</span>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div>
+       <h5 class="font-semibold text-gray-800 mb-4">Data Analytics &amp; Agentic AI</h5>
+       <ul class="space-y-3 text-gray-600">
+        <li class="flex items-start"><i class="fas fa-rocket text-blue-500 mt-1 mr-3"></i> <span>Accelerated data migration, driving a <strong>52% faster Speed To Market</strong> for live reporting</span></li>
+        <li class="flex items-start"><i class="fas fa-cloud text-blue-500 mt-1 mr-3"></i> <span>Led on-premise cloud migration for Global Merchant Network Services, <strong>reducing costs by 43%</strong></span></li>
+        <li class="flex items-start"><i class="fas fa-chart-bar text-blue-500 mt-1 mr-3"></i> <span>Built automated reporting pipelines using <strong>GCP, Cornerstone &amp; PowerBI</strong> for B2B and Fraud Analytics</span></li>
+        <li class="flex items-start"><i class="fas fa-robot text-blue-500 mt-1 mr-3"></i> <span>Created AI Driven agents, cutting manual effort in reporting quality through workflows by <strong>35%</strong></span></li>
+       </ul>
+      </div>
+      <div>
+       <h5 class="font-semibold text-gray-800 mb-4">Data Science &amp; Machine Learning</h5>
+       <ul class="space-y-3 text-gray-600">
+        <li class="flex items-start"><i class="fas fa-users text-purple-500 mt-1 mr-3"></i> <span>Partnered with cross-functional teams to create <strong>attrition predictors &amp; early warning models</strong></span></li>
+        <li class="flex items-start"><i class="fas fa-cog text-purple-500 mt-1 mr-3"></i> <span>Optimized ML models (XGBoost, CatBoost) through <strong>300+ iterations</strong>, boosting precision from 35% to 99%</span></li>
+        <li class="flex items-start"><i class="fas fa-chart-line text-purple-500 mt-1 mr-3"></i> <span>Built forecasting models with <strong>94% accuracy</strong> to flag at-risk merchants and drive proactive interventions</span></li>
+       </ul>
+      </div>
+     </div>
+    </div><!-- Deloitte Experience -->
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-8 card-hover">
+     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+      <div>
+       <h3 class="text-2xl font-bold text-gray-800 mb-2">Consultant (Assistant Manager)</h3>
+       <h4 class="text-xl text-green-600 font-semibold mb-2">Deloitte</h4>
+       <p class="text-gray-600">Professional Experience (1 Year 10 Months) • Jun 2022 – Apr 2024</p>
+      </div>
+      <div class="mt-4 md:mt-0"><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mr-2">Azure</span> <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Data Analytics</span>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div>
+       <h5 class="font-semibold text-gray-800 mb-4">Data Analytics &amp; Cloud Solutions</h5>
+       <ul class="space-y-3 text-gray-600">
+        <li class="flex items-start"><i class="fas fa-chart-line text-green-500 mt-1 mr-3"></i> <span>Boosted SKU efficiency by <strong>60%</strong> and product performance by <strong>40%</strong> driving Unilever UK's data analytics &amp; Azure initiatives</span></li>
+        <li class="flex items-start"><i class="fas fa-cogs text-green-500 mt-1 mr-3"></i> <span>Engineered data-driven solutions using Azure services employing <strong>120+ KPIs</strong> increasing decision accuracy by 25%</span></li>
+        <li class="flex items-start"><i class="fas fa-dashboard text-green-500 mt-1 mr-3"></i> <span>Optimized advanced data reporting dashboards using Power BI and Azure Services, achieving <strong>80% production accuracy</strong></span></li>
+        <li class="flex items-start"><i class="fas fa-database text-green-500 mt-1 mr-3"></i> <span>Streamlined ETL workflows using Azure Data Factory and PySpark, achieving <strong>35% decline in process time</strong></span></li>
+       </ul>
+      </div>
+      <div>
+       <h5 class="font-semibold text-gray-800 mb-4">Leadership &amp; Client Success</h5>
+       <ul class="space-y-3 text-gray-600">
+        <li class="flex items-start"><i class="fas fa-users text-purple-500 mt-1 mr-3"></i> <span>Led team of <strong>4 Analysts</strong>, improving operational efficiency of cloud engineering by 35% &amp; reducing functional costs by 42%</span></li>
+        <li class="flex items-start"><i class="fas fa-trophy text-purple-500 mt-1 mr-3"></i> <span>Achieved model accuracy of up to <strong>85%</strong> by engineering innovative solutions with Python, Databricks, JIRA, and Azure tech stack</span></li>
+        <li class="flex items-start"><i class="fas fa-globe text-purple-500 mt-1 mr-3"></i> <span>Supported <strong>6 multilingual clients</strong> with Azure services, achieving 56% increase in client satisfaction</span></li>
+        <li class="flex items-start"><i class="fas fa-award text-purple-500 mt-1 mr-3"></i> <span><strong>Awarded Fast Track Promotion</strong> to Consultant (Assistant Manager) for contributing to success of 7 major project milestones</span></li>
+       </ul>
+      </div>
+     </div>
+    </div><!-- LTI Mindtree Experience -->
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-8 card-hover">
+     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+      <div>
+       <h3 class="text-2xl font-bold text-gray-800 mb-2">Software Engineer (BFSI Vertical)</h3>
+       <h4 class="text-xl text-orange-600 font-semibold mb-2">LTI Mindtree</h4>
+       <p class="text-gray-600">Campus Hire (1 Year) • Jun 2021 – Jun 2022</p>
+      </div>
+      <div class="mt-4 md:mt-0"><span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm mr-2">Python</span> <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET Core</span>
+      </div>
+     </div>
+     <div class="space-y-4">
+      <ul class="space-y-3 text-gray-600">
+       <li class="flex items-start"><i class="fas fa-smile text-orange-500 mt-1 mr-3"></i> <span>As a campus hire, boosted client satisfaction <strong>90%</strong> by driving operational efficiency with Python-powered .NET Core solutions</span></li>
+       <li class="flex items-start"><i class="fas fa-dollar-sign text-orange-500 mt-1 mr-3"></i> <span>Contributed to in-house automation projects for Insurance clientele, generating additional revenue by <strong>5%</strong></span></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </section><!-- Education Section -->
+  <section id="education" class="py-20 bg-white">
+   <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Education &amp; Achievements</h2>
+     <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 mb-16"><!-- Education -->
+     <div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-8">Academic Record</h3>
+      <div class="space-y-6"><!-- PGDM -->
+       <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+        <div class="flex items-center mb-4"><i class="fas fa-graduation-cap text-2xl text-blue-600 mr-4"></i>
+         <div>
+          <h4 class="text-lg font-bold text-gray-800">PGDM – Big Data Analytics</h4>
+          <p class="text-blue-600 font-semibold">Goa Institute of Management, Goa</p>
+         </div>
+        </div>
+        <div class="flex justify-between items-center"><span class="text-gray-600">2024 – 2026 (Pursuing)</span> <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">6.03/8 CGPA</span>
+        </div>
+       </div><!-- B.E -->
+       <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+        <div class="flex items-center mb-4"><i class="fas fa-microchip text-2xl text-green-600 mr-4"></i>
+         <div>
+          <h4 class="text-lg font-bold text-gray-800">B.E (Electronics &amp; Telecommunications)</h4>
+          <p class="text-green-600 font-semibold">Kalinga Institute of Industrial Technology, Bhubaneswar</p>
+         </div>
+        </div>
+        <div class="flex justify-between items-center"><span class="text-gray-600">2017 – 2021</span> <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">8.58/10 CGPA</span>
+        </div>
+       </div><!-- HSC -->
+       <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6">
+        <div class="flex items-center mb-4"><i class="fas fa-flask text-2xl text-purple-600 mr-4"></i>
+         <div>
+          <h4 class="text-lg font-bold text-gray-800">HSC - Science</h4>
+          <p class="text-purple-600 font-semibold">Little Flower School (ISC)</p>
+         </div>
+        </div>
+        <div class="flex justify-between items-center"><span class="text-gray-600">2015 – 2017</span> <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">93%</span>
+        </div>
+       </div><!-- SSC -->
+       <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6">
+        <div class="flex items-center mb-4"><i class="fas fa-book text-2xl text-orange-600 mr-4"></i>
+         <div>
+          <h4 class="text-lg font-bold text-gray-800">SSC - General</h4>
+          <p class="text-orange-600 font-semibold">Little Flower School (ICSE)</p>
+         </div>
+        </div>
+        <div class="flex justify-between items-center"><span class="text-gray-600">2014 – 2015</span> <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold">95%</span>
+        </div>
+       </div>
+      </div>
+     </div><!-- Achievements & Certifications -->
+     <div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-8">Achievements &amp; Certifications</h3>
+      <div class="space-y-4"><!-- Merit Topper -->
+       <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+        <div class="flex items-center"><i class="fas fa-trophy text-yellow-600 mr-3"></i> <span class="font-semibold text-gray-800">Merit Topper – Top 10 Percentile PGDM BDA 2024-2026 Batch</span>
+        </div>
+       </div><!-- Research Papers -->
+       <div class="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 p-4 rounded-r-lg">
+        <div class="flex items-center mb-3"><i class="fas fa-file-alt text-blue-600 mr-3"></i> <span class="font-semibold text-gray-800">Published Research Papers on ML and Computer Vision in Medical field</span>
+        </div>
+        <div class="ml-6 space-y-2">
+         <div class="flex items-center"><i class="fas fa-external-link-alt text-blue-500 mr-2 text-sm"></i> <a href="https://ijsret.com/2020/07/10/ijsret-volume-6-issue-4-july-aug-2020/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Paper 1: IJSRET Journal Publication</a>
+         </div>
+         <div class="flex items-center"><i class="fas fa-external-link-alt text-blue-500 mr-2 text-sm"></i> <a href="https://www.springerprofessional.de/en/deep-convolutional-neural-network-based-knee-injury-classificati/19033610" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Paper 2: Deep CNN for Knee Injury Classification</a>
+         </div>
+        </div>
+       </div><!-- Scholarship -->
+       <div class="bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 p-4 rounded-r-lg">
+        <div class="flex items-center"><i class="fas fa-award text-green-600 mr-3"></i> <span class="font-semibold text-gray-800">Tata Motors Golden Jubilee Scholarship (₹70k INR) - Merit Scholar in 10th, 12th, B.Tech</span>
+        </div>
+       </div><!-- Certifications -->
+       <div class="bg-gray-50 rounded-lg p-6">
+        <h4 class="font-bold text-gray-800 mb-4 flex items-center"><i class="fas fa-certificate text-indigo-600 mr-2"></i> Professional Certifications</h4>
+        <div class="grid grid-cols-1 gap-3">
+         <div class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="text-gray-700">Coursera - DBMS &amp; SQL for Data Science, Agentic AI, Deep Learning</span>
+         </div>
+         <div class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="text-gray-700">Google Advanced Data Analytics Certificate</span>
+         </div>
+         <div class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="text-gray-700">Udemy - Machine Learning, Cloud Computing (SAP, AWS), Financial Modelling</span>
+         </div>
+         <div class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="text-gray-700">Agentic AI via LangChain and LangGraphs</span>
+         </div>
+         <div class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> <span class="text-gray-700">OCAJP - Oracle Certified Associate Java Programmer</span>
+         </div>
+        </div>
+       </div><!-- Extra Curriculars -->
+       <div class="bg-gray-50 rounded-lg p-6">
+        <h4 class="font-bold text-gray-800 mb-4 flex items-center"><i class="fas fa-star text-purple-600 mr-2"></i> Extra Curricular Activities</h4>
+        <div class="space-y-3">
+         <div class="flex items-start"><i class="fas fa-globe text-blue-500 mr-3 mt-1"></i> <span class="text-gray-700">Delegate in the DISEC committee representing Russia in the KIIT International Model United Nations</span>
+         </div>
+         <div class="flex items-start"><i class="fas fa-swimming-pool text-blue-500 mr-3 mt-1"></i> <span class="text-gray-700">Bronze Medalist in Regional/State Level Swimming Championships</span>
+         </div>
+         <div class="flex items-start"><i class="fas fa-hands-helping text-blue-500 mr-3 mt-1"></i> <span class="text-gray-700">Active volunteer with Rotary Club International &amp; Fund Raiser for Haemophilia Federation of India</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Skills Section -->
+  <section id="skills" class="py-20 bg-gray-50">
+   <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Core Competencies</h2>
+     <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8"><!-- Tools & Technologies -->
+     <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8">
+      <div class="text-center mb-6"><i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
+       <h3 class="text-xl font-bold text-gray-800">Tools &amp; Technologies</h3>
+      </div>
+      <div class="space-y-4">
+       <div class="flex flex-wrap gap-2"><span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Tableau</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Power BI</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Azure</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">GCP</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Colab</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">TensorFlow</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Keras</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Scikit-learn</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">MLOps</span>
+       </div>
+      </div>
+     </div><!-- Programming -->
+     <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-8">
+      <div class="text-center mb-6"><i class="fas fa-code text-4xl text-purple-600 mb-4"></i>
+       <h3 class="text-xl font-bold text-gray-800">Programming</h3>
+      </div>
+      <div class="space-y-4">
+       <div class="flex flex-wrap gap-2"><span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Python</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">R</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">SQL</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Java</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">C++</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">C</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">PySpark</span>
+       </div>
+      </div>
+     </div><!-- Agentic AI -->
+     <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8">
+      <div class="text-center mb-6"><i class="fas fa-robot text-4xl text-green-600 mb-4"></i>
+       <h3 class="text-xl font-bold text-gray-800">Agentic AI</h3>
+      </div>
+      <div class="space-y-4">
+       <div class="flex flex-wrap gap-2"><span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">LangChain</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">LangGraph</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">n8n</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Automation Workflows</span> <span class="bg-white px-3 py-1 rounded-full text-sm text-gray-700">Developing Agents</span>
+       </div>
+      </div>
+     </div>
+    </div><!-- Technical Skills Progress -->
+    <div class="mt-16">
+     <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Technical Proficiency</h3>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div class="space-y-6">
+       <div>
+        <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">Machine Learning</span> <span class="text-gray-500">95%</span>
+        </div>
+        <div class="bg-gray-200 rounded-full h-2">
+         <div class="skill-bar w-[95%]"></div>
+        </div>
+       </div>
+       <div>
+        <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">Python</span> <span class="text-gray-500">90%</span>
+        </div>
+        <div class="bg-gray-200 rounded-full h-2">
+         <div class="skill-bar w-[90%]"></div>
+        </div>
+       </div>
+       <div>
+        <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">Data Analytics</span> <span class="text-gray-500">92%</span>
+        </div>
+        <div class="bg-gray-200 rounded-full h-2">
+         <div class="skill-bar w-[92%]"></div>
+        </div>
+       </div>
+      </div>
+      <div class="space-y-6">
+       <div>
+        <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">Agentic AI</span> <span class="text-gray-500">88%</span>
+        </div>
+        <div class="bg-gray-200 rounded-full h-2">
+         <div class="skill-bar w-[88%]"></div>
+        </div>
+       </div>
+       <div>
+        <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">Data Engineering</span> <span class="text-gray-500">85%</span>
+        </div>
+        <div class="bg-gray-200 rounded-full h-2">
+         <div class="skill-bar w-[85%]"></div>
+        </div>
+       </div>
+       <div>
+        <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">MLOps</span> <span class="text-gray-500">82%</span>
+        </div>
+        <div class="bg-gray-200 rounded-full h-2">
+         <div class="skill-bar w-[82%]"></div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-50">
+   <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+     <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Bank Loan Dashboard -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-blue-500 to-purple-600 h-48 flex items-center justify-center"><i class="fas fa-university text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Bank Loan Dashboard</h3>
+       <p class="text-gray-600 mb-4">Interactive dashboard analyzing loan applications, approval rates, and risk assessment metrics.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Power BI</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">SQL</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Analytics</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/bank-loan-dashboard.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Credit Card Dashboard -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-green-500 to-teal-600 h-48 flex items-center justify-center"><i class="fas fa-credit-card text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Credit Card Dashboard</h3>
+       <p class="text-gray-600 mb-4">Comprehensive analysis of credit card transactions, spending patterns, and customer behavior.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Tableau</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Data Viz</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Finance</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/credit-card-dashboard.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- EV Analysis -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-orange-500 to-red-600 h-48 flex items-center justify-center"><i class="fas fa-car text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Electric Vehicle Analysis</h3>
+       <p class="text-gray-600 mb-4">Market analysis of electric vehicles including adoption trends and performance metrics.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Python</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Pandas</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Visualization</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/ev.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Employee Retention -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-purple-500 to-pink-600 h-48 flex items-center justify-center"><i class="fas fa-users text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Employee Retention Analysis</h3>
+       <p class="text-gray-600 mb-4">HR analytics dashboard predicting employee attrition and retention strategies.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">ML</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">HR Analytics</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Prediction</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/er.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Banking System -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-indigo-500 to-blue-600 h-48 flex items-center justify-center"><i class="fas fa-piggy-bank text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Banking System Analysis</h3>
+       <p class="text-gray-600 mb-4">Comprehensive banking operations analysis with customer segmentation and risk assessment.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">SQL</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Banking</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Risk Analysis</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/bank.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Mobile Sales Analysis -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-teal-500 to-green-600 h-48 flex items-center justify-center"><i class="fas fa-mobile-alt text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Mobile Sales Analysis</h3>
+       <p class="text-gray-600 mb-4">Market analysis of mobile phone sales trends, brand performance, and consumer preferences.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Excel</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Sales Analytics</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Market Research</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/mobile.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Car Sales Dashboard -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-red-500 to-orange-600 h-48 flex items-center justify-center"><i class="fas fa-car-side text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Car Sales Dashboard</h3>
+       <p class="text-gray-600 mb-4">Automotive sales performance analysis with dealer insights and market trends.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Power BI</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Automotive</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Sales KPIs</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/car_sales.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Library Management -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-yellow-500 to-orange-600 h-48 flex items-center justify-center"><i class="fas fa-book text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Library Management System</h3>
+       <p class="text-gray-600 mb-4">Database management system for library operations with book tracking and user analytics.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Database</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Management</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">System Design</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/library-management.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Zomato Analysis -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-pink-500 to-red-600 h-48 flex items-center justify-center"><i class="fas fa-utensils text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Zomato Data Analysis</h3>
+       <p class="text-gray-600 mb-4">Restaurant industry analysis using Zomato data including ratings, cuisine trends, and location insights.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Python</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Food Industry</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">EDA</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/zomato-analysis.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Netflix Analysis -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-red-600 to-black h-48 flex items-center justify-center"><i class="fas fa-play text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Netflix Content Analysis</h3>
+       <p class="text-gray-600 mb-4">Streaming platform content analysis with genre trends, release patterns, and viewer preferences.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Data Science</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Entertainment</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Content Strategy</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/netflix-analysis.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Spotify Analysis -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-green-500 to-black h-48 flex items-center justify-center"><i class="fab fa-spotify text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Spotify Music Analysis</h3>
+       <p class="text-gray-600 mb-4">Music streaming data analysis including track popularity, artist trends, and audio features.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Music Analytics</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Audio Features</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Streaming</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/spotify.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- IPL Dashboard -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-700 h-48 flex items-center justify-center"><i class="fas fa-cricket text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">IPL Sports Analytics Dashboard</h3>
+       <p class="text-gray-600 mb-4">Comprehensive Indian Premier League analysis with team performance, player statistics, and match insights.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Sports Analytics</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Cricket</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Dashboard</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/ipl-dashboard.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Crop Prediction -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-green-600 to-lime-600 h-48 flex items-center justify-center"><i class="fas fa-seedling text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Crop Prediction System</h3>
+       <p class="text-gray-600 mb-4">Agricultural ML model predicting optimal crops based on soil conditions and weather patterns.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Machine Learning</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Agriculture</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Prediction</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/crop.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div><!-- Calorie Tracker -->
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+      <div class="bg-gradient-to-br from-orange-500 to-yellow-600 h-48 flex items-center justify-center"><i class="fas fa-heartbeat text-6xl text-white"></i>
+      </div>
+      <div class="p-6">
+       <h3 class="text-xl font-bold text-gray-800 mb-3">Calorie Tracking System</h3>
+       <p class="text-gray-600 mb-4">Health analytics application for tracking nutrition, calories, and fitness goals with data insights.</p>
+       <div class="flex flex-wrap gap-2 mb-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Health Tech</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Nutrition</span> <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Wellness</span>
+       </div><a href="https://rishipandey2403.github.io/RishiPandey-Portfolio/calorie.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white">
+   <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+     <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6"></div>
+     <p class="text-gray-600 text-lg">Let's discuss how we can work together on your next data science or AI project</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12">
+     <div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-6">Let's Connect</h3>
+      <div class="space-y-6">
+       <div class="flex items-center">
+        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4"><i class="fas fa-envelope text-blue-600"></i>
+        </div>
+        <div>
+         <h4 class="font-semibold text-gray-800">Email</h4><a href="mailto:riship2403@gmail.com" class="text-gray-600 hover:text-blue-600 block">riship2403@gmail.com</a> <a href="mailto:rishi.pandey24b@gim.ac.in" class="text-gray-600 hover:text-blue-600 block">rishi.pandey24b@gim.ac.in</a>
+        </div>
+       </div>
+       <div class="flex items-center">
+        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4"><i class="fab fa-linkedin text-blue-600"></i>
+        </div>
+        <div>
+         <h4 class="font-semibold text-gray-800">LinkedIn</h4><a href="https://www.linkedin.com/in/rishi-pandey-48a306169" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">linkedin.com/in/rishi-pandey-48a306169</a>
+        </div>
+       </div>
+       <div class="flex items-center">
+        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4"><i class="fab fa-github text-blue-600"></i>
+        </div>
+        <div>
+         <h4 class="font-semibold text-gray-800">GitHub</h4><a href="https://github.com/rishipandey2403" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">github.com/rishipandey2403</a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div>
+      <form class="space-y-6" onsubmit="handleFormSubmit(event)">
+       <div><label class="block text-gray-700 font-medium mb-2">Name</label> <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+       </div>
+       <div><label class="block text-gray-700 font-medium mb-2">Email</label> <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+       </div>
+       <div><label class="block text-gray-700 font-medium mb-2">Message</label> <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
+       </div><button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-colors"> Send Message </button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </section><!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+   <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center">
+     <h3 class="text-2xl font-bold mb-4">Rishi Pandey</h3>
+     <p class="text-gray-400 mb-6">Data Scientist &amp; AI Engineer</p>
+     <div class="flex justify-center space-x-6 mb-8"><a href="https://www.linkedin.com/in/rishi-pandey-48a306169" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"> <i class="fab fa-linkedin text-2xl"></i> </a> <a href="https://github.com/rishipandey2403" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"> <i class="fab fa-github text-2xl"></i> </a> <a href="mailto:riship2403@gmail.com" class="text-gray-400 hover:text-white transition-colors"> <i class="fas fa-envelope text-2xl"></i> </a>
+     </div>
+     <div class="border-t border-gray-700 pt-8">
+      <p class="text-gray-400">© 2024 Rishi Pandey. All rights reserved.</p>
+     </div>
+    </div>
+   </div>
   </footer>
-</body>
+  <script>
+        // Typing animation
+        const texts = [
+            "Data Scientist",
+            "AI Engineer", 
+            "Machine Learning Expert",
+            "Agentic AI Developer",
+            "Data Engineer"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typingText');
+
+        function typeText() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+
+            const speed = isDeleting ? 50 : 100;
+            setTimeout(typeText, speed);
+        }
+
+        // Start typing animation
+        typeText();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            event.target.reset();
+        }
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.width = entry.target.classList.contains('w-[95%]') ? '95%' :
+                                                  entry.target.classList.contains('w-[90%]') ? '90%' :
+                                                  entry.target.classList.contains('w-[92%]') ? '92%' :
+                                                  entry.target.classList.contains('w-[88%]') ? '88%' :
+                                                  entry.target.classList.contains('w-[85%]') ? '85%' :
+                                                  entry.target.classList.contains('w-[82%]') ? '82%' : '0%';
+                    }
+                });
+            });
+
+            skillBars.forEach(bar => observer.observe(bar));
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            animateSkillBars();
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cac14c096713faf',t:'MTc3MDU2MzcxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
